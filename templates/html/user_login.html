@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container phone_css">
+        <div class="col-xs-12">
+            <div class="form-signin">
+                <h4 style="color: #777;font-size: 18px;font-weight: bold">行成于思</h4>
+                <label for="inputName" class="sr-only">用户名</label>
+                <input type="text" id="inputName" name="userName" class="form-control" placeholder="用户名" required=""
+                       autofocus="">
+                <label for="inputPassword" class="sr-only">密码</label>
+                <input type="password" id="inputPassword" name="userPswd" class="form-control" placeholder="密码"
+                       required="">
+                <!--提示-->
+                <span class="hint"></span>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="remember-me" name="checked_info" checked="checked"> 记住我
+                    </label>
+                    <span style="float: right">账号不存在则创建，有则登录</span>
+                </div>
+                <button class="btn btn-lg btn-primary btn-block" id="check_" type="button">注册/登录</button>
+            </div>
+        </div>
+    </div>
+    <link rel="stylesheet" href="{{ url_for("static", filename="css/user_login.css") }}">
+    <script src="{{ url_for("static", filename="js/user_login.js") }}"></script>
+{% endblock content %}
+

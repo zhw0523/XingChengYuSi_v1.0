@@ -1,0 +1,130 @@
+.col-xs-9 {
+    padding: 0;
+    padding-right: 20px;
+}
+
+.col-xs-12 {
+    padding: 0;
+}
+
+.col-xs-3 {
+    padding: 0;
+}
+
+.phone_css {
+    margin-top: 66px;
+    margin-bottom: 56px;
+}
+
+.phone_nav {
+    display: none;
+}
+
+body {
+    font-size: 14px;
+    line-height: 1.57142857;
+    background-color: #f5f6f7;
+    color: #333;
+    min-height: 100%
+}
+
+/*防止input框变黄*/
+input:-webkit-autofill {
+    box-shadow: 0 0 0px 1000px white inset !important;
+}
+
+.go_top {
+    display: none;
+    position: fixed;
+    right: 16px;
+    bottom: 6px;
+    z-index: 100;
+    opacity: 0.6;
+
+}
+
+.go_top a {
+    color: #333;
+}
+
+.go_top .glyphicon {
+    top: 9px;
+    right: -5px;
+}
+
+@media screen and (max-width: 768px) {
+    .col-xs-3 {
+        display: none;
+    }
+
+    .phone_css {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .phone_nav {
+        display: block;
+    }
+
+    #cehua {
+        display: none;
+        position: fixed;
+        text-align: left;
+        z-index: 10;
+        height: 0;
+        top: 0;
+        left: 0;
+        width: 0;
+    }
+
+    #cehua ul {
+        list-style-type: none;
+        padding: 10px;
+        background-color: #293038;
+        height: 812px;
+        transition: left 0.3s;
+        overflow-y: auto;
+    }
+
+    #cehua ul li {
+        height: 48px;
+        line-height: 48px;
+        border-bottom: #303C4A solid 1px;
+    }
+
+    #cehua ul li a {
+        font-size: 15px;
+        color: #fff;
+    }
+
+    .m-mark {
+        position: fixed;
+        display: none;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 9;
+        overflow: hidden;
+    }
+
+    .collapsed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin-left: 10px;
+        border: none;
+    }
+
+    .search_btn_b {
+        position: fixed;
+        z-index: 11;
+        top: 0;
+        right: 0;
+        padding-right: 15px;
+        padding-top: 14px;
+        font-size: 16px;
+        color: #777;
+    }
+}

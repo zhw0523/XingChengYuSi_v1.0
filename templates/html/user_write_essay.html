@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container phone_css" style="margin-top: 66px;">
+        <div>
+            <span class="label label-success" style="font-size: 16px"><span
+                    class="glyphicon glyphicon-user"></span> {{ username }}</span>
+            <span class="label label-default" style="font-size: 14px"><span class="glyphicon glyphicon-share"><a
+                    href="/exit_login" style="color: #fff">退出登录</a></span></span>
+        </div>
+
+        <div style="overflow: hidden">
+            <!--发布文章表单-->
+            <form action="/submit_essay" method="post">
+                <script class="editor" name="content" id="content"></script>
+                <input type="hidden" name="user" id="uname" value="{{ username }}">
+
+                <input type="text" placeholder="为你的文章取个名字吧" id="essay_title" name="essay_title">
+                <select name="select" id="select">
+                    <option value="0">可选文章所属分类</option>
+                </select>
+                <input type="hidden" name="essay_cls" id="essay_cls" value="">
+                <button class="btn btn-default" id="sub_content"
+                        style="margin-top: 4px;width: 100%;margin-bottom: 60px;outline: none" type="submit">提交
+                </button>
+            </form>
+        </div>
+
+    </div>
+    <link rel="stylesheet" href="{{ url_for("static", filename="css/user_write_essay.css") }}">
+    <script src="{{ url_for('static', filename="ueditor/ueditor.config.js") }}"></script>
+    <script src="{{ url_for('static', filename="ueditor/ueditor.all.min.js") }}"></script>
+    <script src="{{ url_for('static', filename="ueditor/lang/zh-cn/zh-cn.js") }}"></script>
+    <script src="{{ url_for("static", filename="js/user_write_essay.js") }}"></script>
+{% endblock content %}

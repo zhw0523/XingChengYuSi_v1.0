@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container phone_css">
+        <div class="col-xs-9">
+            <!--文章信息-->
+            <div class="essay_detaile_info">
+                <div class="essay_detaile">
+                    <!--加载文章详细-->
+                    <div class="title_info"><h1 id="essay_t">{{ essay.essay_title }}</h1></div>
+                    <input type="hidden" class="essay_content" value="{{ essay.essay_content }}">
+                    <div class="essay_info"></div>
+                </div>
+                <input type="hidden" class="essay_title" value="">
+                <div class="next_or_prev">
+                    <div class="prev">
+                        <span>上个文章</span><br>
+                        <a href=""></a>
+                    </div>
+                    <div class="next">
+                        <span>下个文章</span><br>
+                        <a href=""></a>
+                    </div>
+                </div>
+
+            </div>
+            <div style="clear: both"></div>
+            <!--相关文章推荐-->
+            <div class="related">
+                <h3>推荐文章</h3>
+                <ul>
+                </ul>
+            </div>
+            <div class="comments">
+                <h3>文章评论</h3>
+                <div>
+                    <ul>
+
+                    </ul>
+                    <div>
+                        <input type="text" id="comment_info" class="form-control" style="float: left"
+                               placeholder="你想哔哔点啥？">
+                        <button type="button" class="btn comment_hf_btn" id="comment_commit">回复</button>
+                    </div>
+                    <div style="clear: both"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-3">
+            <div class="hot_essay">
+                <h2>热文推荐</h2>
+                <ul id="hot_essay_ul">
+                </ul>
+            </div>
+            <div class="essay_classification">
+                <h2>文章分类</h2>
+                <ul>
+                </ul>
+            </div>
+            <div class="Links">
+                <h2>友情链接</h2>
+                <ul>
+                    <li><a href="https://www.baidu.com" target="_blank">百度搜索</a></li>
+                    <li><a href="http://192.168.0.107" target="_blank">行成于思</a></li>
+                </ul>
+            </div>
+            <div class="statistics">
+                <h2>网站统计</h2>
+                <ul>
+                    <li><span>用户总数&nbsp;</span><b>12</b></li>
+                    <li><span>文章总数&nbsp;</span><b>12</b></li>
+                    <li><span>分类总数&nbsp;</span><b>212</b></li>
+                </ul>
+                <div style="clear: both"></div>
+            </div>
+        </div>
+    </div>
+    <link rel="stylesheet" href="{{ url_for("static", filename="css/essay_detaile.css") }}">
+    <!--加载代码高亮css和js-->
+    <link rel="stylesheet"
+          href="{{ url_for("static", filename="ueditor/third-party/SyntaxHighlighter/shCoreDefault.css") }}">
+    <script src="{{ url_for("static", filename="ueditor/third-party/SyntaxHighlighter/shCore.js") }}"></script>
+    <script src="{{ url_for("static", filename="js/essay_detaile.js") }}"></script>
+{% endblock content %}

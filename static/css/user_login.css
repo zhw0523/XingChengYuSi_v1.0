@@ -1,0 +1,24 @@
+.hint {
+    color: red;
+}
+
+#check_ {
+    outline: none;
+}
+
+.form-signin {
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+}
+
+.form-signin-heading {
+    line-height: 35px;
+}
+
+#inputName {
+    margin-bottom: 6px;
+}
+body{
+    background-image: url("/static/files/image/-42ce3e32f0eaa1cd.jpg");
+}

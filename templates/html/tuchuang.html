@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% block content %}
+    <style>
+        .hint {
+            color: red;
+            margin-bottom: 10px;
+        }
+    </style>
+    <div class="container phone_css">
+        <div class="col-xs-12">
+            <p style="color: #333;font-size: 15px;font-weight: bold">图床可以让你本地的文件变成网络共享文件</p>
+            <p style="color: #45B6F7">提示：目前支持上传的格式为: .jpg, .png, .gif, .mp4, 上传的文件大小不同，请耐心等待</p>
+            <form action="/create_file_url" method="post" enctype="multipart/form-data">
+                <span class="hint"></span>
+                <input type="file" id="file" name="files" style="padding-bottom: 10px">
+                <button type="submit" class="btn" id="sub_file" style="background-color: #45B6F7;color: #fff">上传文件</button>
+            </form>
+            <p></p>
+            <div>{{ hint }}</div>
+            <div style="word-wrap:break-word;color: green;" id="target">{{ file_url }}</div>
+            <button class="btn" data-clipboard-action="copy" style="display: {{ copy_info }};background-color: #b94a48;color: #fff" data-clipboard-target="#target" id="copy_btn">
+                点击复制
+            </button>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/clipboard.js/1.5.12/clipboard.min.js"></script>
+    <script>
+        $(function () {
+            var clipboard = new Clipboard('#copy_btn');
+            clipboard.on('success', function (e) {
+                alert("复制成功", 1500);
+                e.clearSelection();
+                console.log(e.clearSelection);
+            });
+            $('#sub_file').click(function () {
+                if (check_files() == true) {
+                    return true;
+                } else {
+                    return false;
+                }
+            });
+
+            //校验文件合法性
+            function check_files() {
+                var file = $('#file').val();
+                var index1 = file.lastIndexOf(".");
+                var index2 = file.length;
+                var suffix = file.substring(index1 + 1, index2);//后缀名
+                if (file) {
+                    if (suffix == 'jpg' || suffix == 'png' || suffix == 'gif' || suffix == 'mp4' || suffix == 'mp3') {
+                        return true;
+                    } else {
+                        $('.hint').text('选择文件不符合上传要求');
+                        return false;
+                    }
+                } else {
+                    $('.hint').text('请选择文件');
+                    return false;
+                }
+            }
+        })
+    </script>
+{% endblock content %}

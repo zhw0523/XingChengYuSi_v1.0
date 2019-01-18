@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container phone_css">
+        <div class="col-xs-9">
+            <h3>最新文章</h3>
+            <ul class="index" style="list-style-type: none;margin: 0;padding: 0">
+                <!--加载博客-->
+            </ul>
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+            <!--加载更多-->
+            <button class="btn" id="load_more"
+                    style="width: 100%;margin-top: 4px;outline: none;margin-bottom: 10px;display: none">查看更多
+            </button>
+            <p id="dixian"
+               style="display: none;width: 100%;height: 30px;line-height: 30px;text-align: center;margin: 0;padding-top: 5px">
+                我能给你的只有这么多了</p>
+        </div>
+        <div class="col-xs-3">
+            <div class="hot_essay">
+                <h2>热文推荐</h2>
+                <ul id="hot_essay_ul">
+                </ul>
+            </div>
+            <div class="essay_classification">
+                <h2>文章分类</h2>
+                <ul>
+                </ul>
+            </div>
+            <div class="Links">
+                <h2>友情链接</h2>
+                <ul>
+                    <li><a href="https://www.baidu.com" target="_blank">百度搜索</a></li>
+                    <li><a href="http://192.168.0.107" target="_blank">行成于思</a></li>
+                </ul>
+            </div>
+            <div class="statistics">
+                <h2>网站统计</h2>
+                <ul>
+                    <li><span>用户总数&nbsp;</span><b>12</b></li>
+                    <li><span>文章总数&nbsp;</span><b>12</b></li>
+                    <li><span>分类总数&nbsp;</span><b>212</b></li>
+                </ul>
+                <div style="clear: both"></div>
+            </div>
+        </div>
+
+
+    </div>
+    <link rel="stylesheet" href="{{ url_for('static', filename="css/index.css") }}">
+    <script src="{{ url_for("static", filename="js/index.js") }}"></script>
+{% endblock content %}

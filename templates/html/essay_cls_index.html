@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container phone_css">
+        <div class="col-xs-9">
+            <input type="hidden" id="cls_name" value="{{ cls_name }}">
+            <h3>{{ cls_name }}</h3>
+            <ul class="cls_info" style="list-style-type: none;margin: 0;padding: 0">
+                <!--加载分类文章-->
+
+            </ul>
+        </div>
+        <div class="col-xs-3">
+            <div class="hot_essay">
+                <h2>热文推荐</h2>
+                <ul id="hot_essay_ul">
+                </ul>
+            </div>
+            <div class="essay_classification">
+                <h2>文章分类</h2>
+                <ul>
+                </ul>
+            </div>
+            <div class="Links">
+                <h2>友情链接</h2>
+                <ul>
+                    <li><a href="https://www.baidu.com" target="_blank">百度搜索</a></li>
+                    <li><a href="http://192.168.0.107" target="_blank">行成于思</a></li>
+                </ul>
+            </div>
+            <div class="statistics">
+                <h2>网站统计</h2>
+                <ul>
+                    <li><span>用户总数&nbsp;</span><b>12</b></li>
+                    <li><span>文章总数&nbsp;</span><b>12</b></li>
+                    <li><span>分类总数&nbsp;</span><b>212</b></li>
+                </ul>
+                <div style="clear: both"></div>
+            </div>
+        </div>
+    </div>
+    <link rel="stylesheet" href="{{ url_for("static", filename="css/essay_cls_index.css") }}">
+    <script src="{{ url_for("static", filename="js/essay_cls_index.js") }}"></script>
+{% endblock content %}

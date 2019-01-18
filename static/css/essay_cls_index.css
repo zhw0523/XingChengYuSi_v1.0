@@ -1,0 +1,169 @@
+.col-xs-12 h3 {
+    margin: 0;
+    font-size: 18px;
+    height: 33px;
+    line-height: 33px;
+    padding-left: 10px;
+    border: #eaeaea solid 1px;
+    border-bottom: none;
+    background-color: #fff;
+    color: #666;
+}
+
+.col-xs-3 ul {
+    padding: 0;
+    margin: 0;
+}
+
+.col-xs-3 h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+    height: 34px;
+    line-height: 34px;
+    padding-left: 10px;
+    border-bottom: #eaeaea solid 1px;
+    color: #666;
+}
+
+.col-xs-9 h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+    height: 33px;
+    line-height: 33px;
+    padding-left: 10px;
+    border: #eaeaea solid 1px;
+    border-bottom: none;
+    background-color: #fff;
+    color: #666;
+}
+/*首页文章*/
+.cls_info {
+    border: #eaeaea solid 1px;
+}
+
+.cls_info li {
+    border-bottom: #eaeaea solid 1px;
+    padding: 10px;
+    background-color: #fff;
+}
+
+.cls_info li span {
+    font-size: 13px;
+}
+
+.cls_info li .info {
+    margin: 0;
+}
+
+.cls_info li h1 a {
+    color: #555;
+    text-decoration: none;
+}
+
+.cls_info li h1 a:hover {
+    color: #45B6F7;
+    transition: all 0.25s;
+}
+
+/*热文推荐*/
+.hot_essay {
+    background-color: #fff;
+    border: 1px solid #eaeaea;
+}
+
+.hot_essay ul {
+    list-style-type: none;
+}
+
+.hot_essay ul li {
+    height: 34px;
+    line-height: 34px;
+    border-bottom: #eee solid 0.5px;
+}
+
+.hot_essay ul li a {
+    padding-left: 10px;
+    font-size: 14px;
+    color: #666;
+    text-decoration: none;
+}
+
+.hot_essay ul li a:hover {
+    color: #45B6F7;
+    transition: all 0.25s;
+}
+
+/*文章分类*/
+.essay_classification {
+    background-color: #fff;
+    border: 1px solid #eaeaea;
+    margin-top: 20px;
+}
+
+.essay_classification ul {
+    color: #666;
+    padding-left: 26px;
+}
+
+.essay_classification ul li {
+    height: 28px;
+    line-height: 28px;
+}
+
+.essay_classification ul li a {
+    font-size: 14px;
+    color: #666;
+}
+
+.essay_classification ul li a:hover {
+    color: #45B6F7;
+    transition: all 0.25s;
+}
+
+/*友情链接*/
+.Links {
+    background-color: #fff;
+    border: 1px solid #eaeaea;
+    margin-top: 20px;
+}
+
+.Links ul {
+    list-style-type: none;
+    color: #666;
+    padding-left: 10px;
+}
+
+.Links ul li {
+    height: 28px;
+    line-height: 28px;
+}
+
+.Links ul li a {
+    font-size: 14px;
+    color: #666;
+}
+
+.Links ul li a:hover {
+    color: #45B6F7;
+    transition: all 0.25s;
+}
+
+/*网站统计*/
+.statistics {
+    background-color: #fff;
+    border: 1px solid #eaeaea;
+    margin-top: 20px;
+}
+
+.statistics ul {
+    list-style-type: none;
+    color: #666;
+    padding-left: 10px;
+}
+
+.statistics ul li {
+    height: 28px;
+    line-height: 28px;
+}

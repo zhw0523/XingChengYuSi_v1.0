@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container" style="margin-bottom: 60px">
+        <div class="col-xs-12">
+            <h4>行成于思-后台信息管理</h4>
+            <div class="control">
+                <ul>
+                    <li><a href="javascript:" id="get_user_info">获取用户数据</a></li>
+                    <li><a href="javascript:" id="get_essay_info">获取文章数据</a></li>
+                    <li><a href="javascript:" id="get_cls_info">获取分类数据</a></li>
+                </ul>
+            </div>
+            <!--用户-->
+            <div class="user_info info">
+                <div>
+                    <table border="1">
+                        <thead>
+                        <tr>
+                            <th>用户ID</th>
+                            <th>用户名称</th>
+                            <th>注册时间</th>
+                            <th>用户操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <!--用户信息-->
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!--文章-->
+            <div class="essay_info info">
+                <div>
+                    <table border="1">
+                        <thead>
+                        <tr>
+                            <th>文章ID</th>
+                            <th>文章名称</th>
+                            <th>文章分类</th>
+                            <th>发布人</th>
+                            <th>发布时间</th>
+                            <th>评论条数(点击查看)</th>
+                            <th>阅读次数</th>
+                            <th>文章操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <!--用户信息-->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!--评论-->
+            <div class="comments_info info">
+                <div>
+                    <table border="1">
+                        <thead>
+                        <tr>
+                            <th>评论ID</th>
+                            <th>评论用户</th>
+                            <th>评论文章</th>
+                            <th>评论内容</th>
+                            <th>评论时间</th>
+                            <th>点赞数量</th>
+                            <th>评论操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <!--评论信息-->
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!--分类-->
+            <div class="cls_info info">
+                <div>
+                    <table border="1">
+                        <thead>
+                        <tr>
+                            <th>分类ID</th>
+                            <th>分类名称</th>
+                            <th>分类操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <!--分类信息-->
+                        </tbody>
+                    </table>
+                </div>
+                <div style="margin-top: 10px;" class="add_input">
+                    <input type="text" id="cls_text" placeholder="需要添加的分类">
+                    <button id="sub_cls"><span class="glyphicon glyphicon-send" style="margin-right: 4px"></span>
+                    </button>
+                    <span class="hint"></span>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <link rel="stylesheet" href="{{ url_for("static", filename="css/admin.css") }}">
+    <script src="{{ url_for("static", filename="js/admin.js") }}"></script>
+{% endblock content %}

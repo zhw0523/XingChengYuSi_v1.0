@@ -1,0 +1,323 @@
+img {
+    max-width: 100%;
+}
+
+video {
+    max-width: 100%;
+}
+
+.col-xs-3 {
+    padding: 0;
+    margin-left: 20px;
+}
+
+.col-xs-3 ul {
+    padding: 0;
+    margin: 0;
+}
+
+.col-xs-3 h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+    height: 34px;
+    line-height: 34px;
+    padding-left: 10px;
+    border-bottom: #eaeaea solid 1px;
+    color: #666;
+}
+
+.col-xs-9 h3 {
+    color: #444;
+    font-size: 16px;
+    font-weight: bold;
+    padding-bottom: 6px;
+    margin-bottom: 0;
+    border-bottom: #ddd solid 1px;
+}
+
+.col-xs-9 {
+    width: 835px;
+    padding: 10px;
+    background-color: #fff;
+    border: #eaeaea solid 1px;
+}
+
+.info span {
+    padding-right: 20px;
+    font-size: 14px;
+    color: #333;
+}
+
+.title_info {
+    padding-bottom: 8px;
+    border-bottom: #ddd solid 1px;
+}
+
+.prev {
+    float: left;
+    border-right: #e7e7e7 solid 1px;
+    padding-right: 10px;
+    width: 50%;
+}
+
+.next {
+    float: right;
+    padding-left: 10px;
+    width: 50%;
+}
+
+.next span {
+    float: right;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.next a {
+    float: right;
+}
+
+.prev span {
+    float: left;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.next_or_prev {
+    margin-top: 30px;
+}
+
+.next_or_prev a {
+    color: #555;
+    text-decoration: underline;
+}
+
+.next_or_prev a:hover {
+    color: #45B6F7;
+    transition: all 0.25s;
+}
+
+.comments h3 {
+    color: #444;
+    font-size: 16px;
+    font-weight: bold;
+    padding-bottom: 6px;
+    margin-bottom: 0;
+    border-bottom: #ddd solid 1px;
+}
+
+.related ul {
+    padding-left: 18px;
+    color: #bbb;
+}
+
+.related ul li {
+    padding-top: 10px;
+    font-size: 15px;
+}
+
+.related ul li a {
+    color: #666;
+    text-decoration: none;
+}
+
+.related ul li a:hover {
+    color: #45B6F7;
+    transition: all 0.25s;
+}
+
+.essay_info {
+    color: #333;
+    padding-top: 6px;
+    width: 100%;
+    height: auto;
+    line-height: 1.5;
+    overflow: hidden;
+}
+
+.essay_info table {
+    line-height: 1.428571429;
+}
+
+.syntaxhighlighter div {
+    line-height: 1.428571429 !important;
+}
+
+.syntaxhighlighter td.code {
+    padding-top: 9.5px !important;
+}
+
+/*热文推荐*/
+.hot_essay {
+    background-color: #fff;
+    border: 1px solid #eaeaea;
+}
+
+.hot_essay ul {
+    list-style-type: none;
+}
+
+.hot_essay ul li {
+    height: 34px;
+    line-height: 34px;
+    border-bottom: #eee solid 0.5px;
+}
+
+.hot_essay ul li a {
+    padding-left: 10px;
+    font-size: 14px;
+    color: #666;
+    text-decoration: none;
+}
+
+.hot_essay ul li a:hover {
+    color: #45B6F7;
+    transition: all 0.25s;
+}
+
+/*文章分类*/
+.essay_classification {
+    background-color: #fff;
+    border: 1px solid #eaeaea;
+    margin-top: 20px;
+}
+
+.essay_classification ul {
+    color: #666;
+    padding-left: 26px;
+}
+
+.essay_classification ul li {
+    height: 28px;
+    line-height: 28px;
+}
+
+.essay_classification ul li a {
+    font-size: 14px;
+    color: #666;
+}
+
+.essay_classification ul li a:hover {
+    color: #45B6F7;
+    transition: all 0.25s;
+}
+
+/*友情链接*/
+.Links {
+    background-color: #fff;
+    border: 1px solid #eaeaea;
+    margin-top: 20px;
+}
+
+.Links ul {
+    list-style-type: none;
+    color: #666;
+    padding-left: 10px;
+}
+
+.Links ul li {
+    height: 28px;
+    line-height: 28px;
+}
+
+.Links ul li a {
+    font-size: 14px;
+    color: #666;
+}
+
+.Links ul li a:hover {
+    color: #45B6F7;
+    transition: all 0.25s;
+}
+
+/*网站统计*/
+.statistics {
+    background-color: #fff;
+    border: 1px solid #eaeaea;
+    margin-top: 20px;
+}
+
+.statistics ul {
+    list-style-type: none;
+    color: #666;
+    padding-left: 10px;
+}
+
+.statistics ul li {
+    height: 28px;
+    line-height: 28px;
+}
+
+/*评论*/
+.comments ul {
+    list-style-type: none;
+    padding: 0;
+    padding-top: 2px;
+}
+
+.comments ul li {
+    border-bottom: #eaeaea solid 1px;
+    padding: 10px;
+}
+
+.comments .comment_info {
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+.comment_bottom #like_number {
+    float: right;
+}
+
+.comment_bottom #like {
+    float: left;
+}
+
+.comment_bottom a {
+    color: #333;
+    float: right;
+}
+
+.form-control {
+    width: 80%;
+    height: auto;
+}
+
+#essay_t {
+    margin: 0;
+    font-size: 22px;
+    font-weight: bold;
+    color: #666;
+    border-left: 5px solid #1fa6e6;
+}
+
+.comment_hf_btn {
+    float: left;
+    width: 19%;
+    margin-left: 1px;
+    outline: none;
+    background-color: #00a0e9;
+    color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+
+    .col-xs-12 {
+        background-color: #fff;
+        border: #eaeaea solid 1px;
+        padding: 10px;
+    }
+
+    .col-xs-12 h3 {
+        color: #444;
+        font-size: 16px;
+        font-weight: bold;
+        padding-bottom: 6px;
+        margin-bottom: 0;
+        border-bottom: #ddd solid 1px;
+    }
+
+    #essay_t {
+        font-size: 20px;
+    }
+}

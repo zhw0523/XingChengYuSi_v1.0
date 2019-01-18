@@ -1,0 +1,219 @@
+.col-xs-12 h3 {
+    margin: 0;
+    font-size: 18px;
+    height: 33px;
+    line-height: 33px;
+    padding-left: 10px;
+    border: #eaeaea solid 1px;
+    border-bottom: none;
+    background-color: #fff;
+    color: #666;
+}
+
+.col-xs-3 ul {
+    padding: 0;
+    margin: 0;
+}
+
+.col-xs-3 h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+    height: 34px;
+    line-height: 34px;
+    padding-left: 10px;
+    border-bottom: #eaeaea solid 1px;
+    color: #666;
+}
+
+.col-xs-9 h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+    height: 33px;
+    line-height: 33px;
+    padding-left: 10px;
+    border: #eaeaea solid 1px;
+    border-bottom: none;
+    background-color: #fff;
+    color: #666;
+}
+/*热文推荐*/
+.hot_essay {
+    background-color: #fff;
+    border: 1px solid #eaeaea;
+}
+
+.hot_essay ul {
+    list-style-type: none;
+}
+
+.hot_essay ul li {
+    height: 34px;
+    line-height: 34px;
+    border-bottom: #eee solid 0.5px;
+}
+
+.hot_essay ul li a {
+    padding-left: 10px;
+    font-size: 14px;
+    color: #666;
+    text-decoration: none;
+}
+
+.hot_essay ul li a:hover {
+    color: #45B6F7;
+    transition: all 0.25s;
+}
+
+/*文章分类*/
+.essay_classification {
+    background-color: #fff;
+    border: 1px solid #eaeaea;
+    margin-top: 20px;
+}
+
+.essay_classification ul {
+    color: #666;
+    padding-left: 26px;
+}
+
+.essay_classification ul li {
+    height: 28px;
+    line-height: 28px;
+}
+
+.essay_classification ul li a {
+    font-size: 14px;
+    color: #666;
+}
+
+.essay_classification ul li a:hover {
+    color: #45B6F7;
+    transition: all 0.25s;
+}
+
+/*友情链接*/
+.Links {
+    background-color: #fff;
+    border: 1px solid #eaeaea;
+    margin-top: 20px;
+}
+
+.Links ul {
+    list-style-type: none;
+    color: #666;
+    padding-left: 10px;
+}
+
+.Links ul li {
+    height: 28px;
+    line-height: 28px;
+}
+
+.Links ul li a {
+    font-size: 14px;
+    color: #666;
+}
+
+.Links ul li a:hover {
+    color: #45B6F7;
+    transition: all 0.25s;
+}
+
+/*网站统计*/
+.statistics {
+    background-color: #fff;
+    border: 1px solid #eaeaea;
+    margin-top: 20px;
+}
+
+.statistics ul {
+    list-style-type: none;
+    color: #666;
+    padding-left: 10px;
+}
+
+.statistics ul li {
+    height: 28px;
+    line-height: 28px;
+}
+
+/*首页文章*/
+.index {
+    border: #eaeaea solid 1px;
+}
+
+.index li {
+    border-bottom: #eaeaea solid 1px;
+    padding: 10px;
+    background-color: #fff;
+}
+
+.index li span {
+    font-size: 13px;
+}
+
+.index li .info {
+    margin: 0;
+}
+
+.index li h1 a {
+    color: #555;
+    text-decoration: none;
+}
+
+.index li h1 a:hover {
+    color: #45B6F7;
+    transition: all 0.25s;
+}
+
+/*加载动画*/
+.spinner {
+    margin: 5px auto;
+    width: 150px;
+    text-align: center;
+}
+
+.spinner > div {
+    width: 10px;
+    height: 10px;
+    background-color: #45B6F7;
+    border-radius: 100%;
+    display: inline-block;
+    -webkit-animation: bouncedelay 0.92s infinite ease-in-out;
+    animation: bouncedelay 0.92s infinite ease-in-out;
+    /* Prevent first frame from flickering when animation starts */
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.spinner .bounce1 {
+    -webkit-animation-delay: -0.32s;
+    animation-delay: -0.32s;
+}
+
+.spinner .bounce2 {
+    -webkit-animation-delay: -0.16s;
+    animation-delay: -0.16s;
+}
+
+@-webkit-keyframes bouncedelay {
+    0%, 80%, 100% {
+        -webkit-transform: scale(0.0)
+    }
+    40% {
+        -webkit-transform: scale(1.0)
+    }
+}
+
+@keyframes bouncedelay {
+    0%, 80%, 100% {
+        transform: scale(0.0);
+        -webkit-transform: scale(0.0);
+    }
+    40% {
+        transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+    }
+}
