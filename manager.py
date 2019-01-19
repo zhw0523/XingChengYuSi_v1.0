@@ -292,8 +292,6 @@ def get_prev_or_next():
                 essay_next = ''
             if essay_next_index == -1:
                 essay_next = ''
-            # print('wqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq')
-            # print(index, essay_prev_index, essay_next_index, essay_prev, essay_next)
             return jsonify({"essay_prev": essay_prev, "essay_next": essay_next})
 
 
@@ -546,7 +544,7 @@ def remove_comments():
 
 def resize_img(img_name):
     """压缩图片"""
-    path = "D:\\XingChengYuSi\\static\\files\\image\\"
+    path = "D:\\XingChengYuSi\\static\\files\\image\\" #这里改成自己的存放图片的路径,windows路径
     img_size = os.path.getsize(path + img_name)
     if img_size > 2048000:
         with Image.open(path + img_name) as im:
@@ -636,7 +634,7 @@ def upload():
 
         result = {
             "state": "SUCCESS",
-            "url": "http://192.168.0.107/static/files/" + dir_name + "/" + upfile.filename,
+            "url": "http://192.168.0.107/static/files/" + dir_name + "/" + upfile.filename, #这里也改成你自己的路径
             "title": upfile.filename,
             "original": upfile.filename
         }
