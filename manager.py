@@ -17,7 +17,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:weige521@127.0.0.1:3306/xi
 app.config['SQLALCHEMY_COMMIT_ON_TEARDOWN'] = True
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 # 查询时会显示原始SQL语句
-#app.config['SQLALCHEMY_ECHO'] = True
+# app.config['SQLALCHEMY_ECHO'] = True
 
 # session
 app.config['SECRET_KEY'] = os.urandom(24)
@@ -83,13 +83,13 @@ def index():
 @app.route('/admin')
 def admin_index():
     """后台首页"""
-    try:
-        uname = session['username']
+    uname = session.get('username')
+    if uname:
         if uname == "admin":
             return render_template('html/admin.html')
         else:
             return redirect('/')
-    except:
+    else:
         return redirect('/user_login')
 
 
@@ -203,9 +203,9 @@ def user_login_check():
     if user:
         if user.user_pswd_md5 == pswd_md5:
             session['username'] = user.user_name
-            return jsonify({"msg":'user_write_essay/' + user.user_name})
+            return jsonify({"msg": 'user_write_essay/' + user.user_name})
         else:
-            return jsonify({"msg":"密码错误"})
+            return jsonify({"msg": "密码错误"})
     else:
         new_user = User(user_name=name, user_pswd_md5=pswd_md5, register_time=reg_time)
         db.session.add(new_user)
@@ -264,7 +264,7 @@ def essay_detaile(title):
         essay.essay_scan += 1
         db.session.add(essay)
         db.session.commit()
-        return render_template('html/essay_detaile.html',essay=essay)
+        return render_template('html/essay_detaile.html', essay=essay)
     else:
         return "没有文章"
 
