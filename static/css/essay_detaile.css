@@ -54,6 +54,24 @@ video {
     border-bottom: #ddd solid 1px;
 }
 
+.title_info div{
+    padding-top: 10px;
+}
+
+.title_info div span{
+    color: #777;
+    padding-right: 20px;
+}
+.title_info div span a{
+    color: #777;
+    text-decoration: none;
+}
+
+.title_info div span a:hover{
+    color: #3399ea;
+    text-decoration: underline;
+}
+
 .prev {
     float: left;
     border-right: #e7e7e7 solid 1px;
@@ -288,12 +306,13 @@ video {
 }
 
 #essay_t {
+    font-family: 'Microsoft YaHei','SF Pro Display',Roboto,Noto,Arial,'PingFang SC',sans-serif;
     margin: 0;
-    font-size: 22px;
+    font-size: 24px;
     font-weight: bold;
     color: #666;
-    border-left: 5px solid #1fa6e6;
 }
+
 
 .comment_hf_btn {
     float: left;

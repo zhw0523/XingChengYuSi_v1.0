@@ -6,7 +6,14 @@
             <div class="essay_detaile_info">
                 <div class="essay_detaile">
                     <!--加载文章详细-->
-                    <div class="title_info"><h1 id="essay_t">{{ essay.essay_title }}</h1></div>
+                    <div class="title_info">
+                        <h1 id="essay_t">{{ essay.essay_title }}</h1>
+                        <div>
+                            <span>作者：<a href="/">{{ essay.essay_push_user }}</a></span>
+                            <span>时间：{{ essay.essay_push_time }}</span>
+                            <span>阅读：{{ essay.essay_scan }}</span>
+                        </div>
+                    </div>
                     <input type="hidden" class="essay_content" value="{{ essay.essay_content }}">
                     <div class="essay_info"></div>
                 </div>
