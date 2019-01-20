@@ -4,19 +4,13 @@
     <list default="true" id="82814e11-3f3f-44f9-9f78-ca0270157a3f" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/manager.py" afterPath="$PROJECT_DIR$/manager.py" />
-      <change beforePath="$PROJECT_DIR$/static/css/search_index.css" afterPath="$PROJECT_DIR$/static/css/search_index.css" />
-      <change beforePath="$PROJECT_DIR$/static/css/user_login.css" afterPath="$PROJECT_DIR$/static/css/user_login.css" />
-      <change beforePath="$PROJECT_DIR$/static/files/image/-2ca58c9c9d97c42a.jpg" afterPath="$PROJECT_DIR$/static/img/search_bj.jpg" />
-      <change beforePath="$PROJECT_DIR$/static/files/image/-42ce3e32f0eaa1cd.jpg" afterPath="$PROJECT_DIR$/static/img/login_bj.jpg" />
-      <change beforePath="$PROJECT_DIR$/static/files/image/IMG_20190114_212319.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/files/image/img.jpeg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/js/search_index.js" afterPath="$PROJECT_DIR$/static/js/search_index.js" />
-      <change beforePath="$PROJECT_DIR$/whoosh_index/Essay/MAIN_bzlb429o2ytf9zl3.seg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/whoosh_index/Essay/MAIN_de8i60tdjvia18w3.seg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/whoosh_index/Essay/MAIN_eqn7jfv5136t3i9g.seg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/whoosh_index/Essay/MAIN_mdu3028ogndrexvy.seg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/whoosh_index/Essay/MAIN_n9g8jly9cqqcx8m3.seg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/whoosh_index/Essay/_MAIN_2920.toc" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/css/essay_detaile.css" afterPath="$PROJECT_DIR$/static/css/essay_detaile.css" />
+      <change beforePath="$PROJECT_DIR$/static/js/essay_detaile.js" afterPath="$PROJECT_DIR$/static/js/essay_detaile.js" />
+      <change beforePath="$PROJECT_DIR$/templates/html/essay_detaile.html" afterPath="$PROJECT_DIR$/templates/html/essay_detaile.html" />
+      <change beforePath="$PROJECT_DIR$/whoosh_index/Essay/MAIN_gok4wpp4xwe1hdf7.seg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/whoosh_index/Essay/MAIN_qhbttwewl7vlc3if.seg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/whoosh_index/Essay/MAIN_w3uoiat7jp1vz75e.seg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/whoosh_index/Essay/_MAIN_2938.toc" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -36,57 +30,64 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="manager.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="manager.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/manager.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="80" column="0" lean-forward="true" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
+            <state relative-caret-position="156">
+              <caret line="481" column="28" lean-forward="true" selection-start-line="481" selection-start-column="28" selection-end-line="481" selection-end-column="28" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="404.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/html/404.html">
+      <file leaf-file-name="essay_detaile.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/html/essay_detaile.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="81" column="18" lean-forward="false" selection-start-line="81" selection-start-column="18" selection-end-line="81" selection-end-column="18" />
-              <folding>
-                <element signature="n#style#0;n#head#0;n#html#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/base.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="6" column="44" lean-forward="true" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
+            <state relative-caret-position="-29">
+              <caret line="36" column="24" lean-forward="false" selection-start-line="36" selection-start-column="24" selection-end-line="36" selection-end-column="24" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="search_index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/js/search_index.js">
+      <file leaf-file-name="essay_detaile.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/js/essay_detaile.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="37" column="38" lean-forward="true" selection-start-line="37" selection-start-column="38" selection-end-line="37" selection-end-column="38" />
+            <state relative-caret-position="294">
+              <caret line="68" column="62" lean-forward="true" selection-start-line="68" selection-start-column="62" selection-end-line="68" selection-end-column="62" />
               <folding>
-                <marker date="1547971110365" expanded="true" signature="75:1192" ph="..." />
-                <marker date="1547971110365" expanded="false" signature="113:198" ph="..." />
-                <marker date="1547971110365" expanded="false" signature="360:393" ph="..." />
-                <marker date="1547971110365" expanded="true" signature="465:1165" ph="..." />
-                <marker date="1547971110365" expanded="true" signature="650:719" ph="..." />
-                <marker date="1547971110365" expanded="false" signature="693:711" ph="..." />
-                <marker date="1547971110365" expanded="false" signature="841:859" ph="..." />
-                <marker date="1547971110365" expanded="false" signature="918:928" ph="..." />
-                <marker date="1547971110365" expanded="true" signature="1027:1096" ph="..." />
-                <marker date="1547971110365" expanded="false" signature="1070:1088" ph="..." />
-                <marker date="1547971110365" expanded="true" signature="3346:3357" ph="..." />
-                <marker date="1547971110365" expanded="true" signature="3771:3782" ph="..." />
+                <marker date="1547978069142" expanded="true" signature="1463:3008" ph="..." />
+                <marker date="1547978069142" expanded="true" signature="1498:1843" ph="..." />
+                <marker date="1547978069142" expanded="true" signature="1498:2916" ph="..." />
+                <marker date="1547978069142" expanded="true" signature="1738:1767" ph="..." />
+                <marker date="1547978069142" expanded="true" signature="1886:1905" ph="..." />
+                <marker date="1547978069142" expanded="true" signature="1906:1964" ph="..." />
+                <marker date="1547978069142" expanded="true" signature="1906:2916" ph="..." />
+                <marker date="1547978069142" expanded="true" signature="2058:2880" ph="..." />
+                <marker date="1547978069142" expanded="true" signature="2304:2635" ph="..." />
+                <marker date="1547978069142" expanded="true" signature="2310:2511" ph="..." />
+                <marker date="1547978069142" expanded="false" signature="2363:2410" ph="..." />
+                <marker date="1547978069142" expanded="false" signature="2959:2970" ph="..." />
+                <marker date="1547978069142" expanded="true" signature="3664:3674" ph="..." />
+                <marker date="1547978069142" expanded="true" signature="3784:3794" ph="..." />
+                <marker date="1547978069142" expanded="true" signature="4236:4272" ph="..." />
+                <marker date="1547978069142" expanded="true" signature="4322:4355" ph="..." />
+                <marker date="1547978069142" expanded="true" signature="12866:12872" ph=" " />
+                <marker date="1547978069142" expanded="false" signature="12944:12950" ph=" " />
+                <marker date="1547978069142" expanded="false" signature="13023:13029" ph=" " />
+                <marker date="1547978069142" expanded="false" signature="13108:13114" ph=" " />
+                <marker date="1547978069142" expanded="true" signature="13903:13909" ph=" " />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="essay_detaile.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/css/essay_detaile.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="307">
+              <caret line="281" column="0" lean-forward="false" selection-start-line="281" selection-start-column="0" selection-end-line="281" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -179,10 +180,7 @@
         <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/static/js/base.js" />
         <option value="$PROJECT_DIR$/static/css/base.css" />
-        <option value="$PROJECT_DIR$/static/js/essay_detaile.js" />
         <option value="$PROJECT_DIR$/static/ueditor/third-party/SyntaxHighlighter/shCoreDefault.css" />
-        <option value="$PROJECT_DIR$/static/css/essay_detaile.css" />
-        <option value="$PROJECT_DIR$/templates/html/essay_detaile.html" />
         <option value="$PROJECT_DIR$/static/css/index.css" />
         <option value="$PROJECT_DIR$/static/js/index.js" />
         <option value="$PROJECT_DIR$/static/js/user_write_essay.js" />
@@ -192,8 +190,11 @@
         <option value="$PROJECT_DIR$/static/css/user_write_essay.css" />
         <option value="$PROJECT_DIR$/static/css/search_index.css" />
         <option value="$PROJECT_DIR$/static/js/search_index.js" />
-        <option value="$PROJECT_DIR$/manager.py" />
         <option value="$PROJECT_DIR$/templates/html/404.html" />
+        <option value="$PROJECT_DIR$/static/css/essay_detaile.css" />
+        <option value="$PROJECT_DIR$/templates/html/essay_detaile.html" />
+        <option value="$PROJECT_DIR$/static/js/essay_detaile.js" />
+        <option value="$PROJECT_DIR$/manager.py" />
       </list>
     </option>
   </component>
@@ -227,6 +228,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -278,8 +281,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -476,7 +477,7 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5350734" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.54649264" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.52124184" sideWeight="0.49092284" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23676248" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24054463" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -645,27 +646,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/essay_detaile.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="290" column="35" lean-forward="true" selection-start-line="290" selection-start-column="35" selection-end-line="290" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/html/essay_detaile.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="13" column="34" lean-forward="false" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/essay_detaile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/js/base.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -742,16 +722,8 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/files/image/img.jpeg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/files/image/IMG_20190114_212319.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/static/files/image/img.jpeg" />
+    <entry file="file://$PROJECT_DIR$/static/files/image/IMG_20190114_212319.jpg" />
     <entry file="file://$PROJECT_DIR$/static/img/search_bj.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -767,8 +739,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/static/js/search_index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="37" column="38" lean-forward="true" selection-start-line="37" selection-start-column="38" selection-end-line="37" selection-end-column="38" />
+        <state relative-caret-position="777">
+          <caret line="37" column="38" lean-forward="false" selection-start-line="37" selection-start-column="38" selection-end-line="37" selection-end-column="38" />
           <folding>
             <marker date="1547971110365" expanded="true" signature="75:1192" ph="..." />
             <marker date="1547971110365" expanded="false" signature="113:198" ph="..." />
@@ -794,29 +766,73 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/manager.py">
+    <entry file="file://$PROJECT_DIR$/templates/html/404.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="80" column="0" lean-forward="true" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
+        <state relative-caret-position="224">
+          <caret line="81" column="21" lean-forward="true" selection-start-line="81" selection-start-column="21" selection-end-line="81" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="44" lean-forward="true" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
+        <state relative-caret-position="21">
+          <caret line="6" column="44" lean-forward="false" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/html/404.html">
+    <entry file="file://$PROJECT_DIR$/static/css/essay_detaile.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="81" column="18" lean-forward="false" selection-start-line="81" selection-start-column="18" selection-end-line="81" selection-end-column="18" />
+        <state relative-caret-position="307">
+          <caret line="281" column="0" lean-forward="false" selection-start-line="281" selection-start-column="0" selection-end-line="281" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/essay_detaile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="68" column="62" lean-forward="true" selection-start-line="68" selection-start-column="62" selection-end-line="68" selection-end-column="62" />
           <folding>
-            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" expanded="false" />
+            <marker date="1547978069142" expanded="true" signature="1463:3008" ph="..." />
+            <marker date="1547978069142" expanded="true" signature="1498:1843" ph="..." />
+            <marker date="1547978069142" expanded="true" signature="1498:2916" ph="..." />
+            <marker date="1547978069142" expanded="true" signature="1738:1767" ph="..." />
+            <marker date="1547978069142" expanded="true" signature="1886:1905" ph="..." />
+            <marker date="1547978069142" expanded="true" signature="1906:1964" ph="..." />
+            <marker date="1547978069142" expanded="true" signature="1906:2916" ph="..." />
+            <marker date="1547978069142" expanded="true" signature="2058:2880" ph="..." />
+            <marker date="1547978069142" expanded="true" signature="2304:2635" ph="..." />
+            <marker date="1547978069142" expanded="true" signature="2310:2511" ph="..." />
+            <marker date="1547978069142" expanded="false" signature="2363:2410" ph="..." />
+            <marker date="1547978069142" expanded="false" signature="2959:2970" ph="..." />
+            <marker date="1547978069142" expanded="true" signature="3664:3674" ph="..." />
+            <marker date="1547978069142" expanded="true" signature="3784:3794" ph="..." />
+            <marker date="1547978069142" expanded="true" signature="4236:4272" ph="..." />
+            <marker date="1547978069142" expanded="true" signature="4322:4355" ph="..." />
+            <marker date="1547978069142" expanded="true" signature="12866:12872" ph=" " />
+            <marker date="1547978069142" expanded="false" signature="12944:12950" ph=" " />
+            <marker date="1547978069142" expanded="false" signature="13023:13029" ph=" " />
+            <marker date="1547978069142" expanded="false" signature="13108:13114" ph=" " />
+            <marker date="1547978069142" expanded="true" signature="13903:13909" ph=" " />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/html/essay_detaile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-29">
+          <caret line="36" column="24" lean-forward="false" selection-start-line="36" selection-start-column="24" selection-end-line="36" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manager.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="481" column="28" lean-forward="true" selection-start-line="481" selection-start-column="28" selection-end-line="481" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>

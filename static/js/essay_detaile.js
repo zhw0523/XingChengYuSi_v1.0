@@ -63,10 +63,10 @@ $(function () {
     function set_comments_ul(comment) {
         var html = '<li>\
                             <div>\
-                                <img src="' + comment.comment_user_head + '" alt="" width="35px" height="35px" style="border: #777 solid 1px;">\
-                                <strong class="comment_user">' + comment.comment_user + '</strong>\
+                                <img src="' + comment.comment_user_head + '" alt="" class="user_head_img" width="40px" height="40px">\
+                                <strong class="comment_user">' + comment.comment_user + '<span style="color: #777;font-weight: 100;">'+ comment.is_author +'</span></strong>\
                             </div>\
-                            <div style="padding-left: 39px;">\
+                            <div style="padding-left: 44px;">\
                                 <p class="comment_info">' + comment.comment_text + '</p>\
                                 <div class="comment_bottom">\
                                     <time>' + comment.comment_time + '</time>\
@@ -97,8 +97,9 @@ $(function () {
             success: function (data) {
                 if (data.essay_comments_list == 'null') {
                     $('.comments ul').css('padding', '0');
-                    $('.comments ul').html('<span style="color:#777">暂无评论</span>');
+                    $('.comments .comments_len').html('<span style="color:#777">暂无评论</span>');
                 } else {
+                    $('.comments .comments_len').html('<span style="color:#777">热评'+data.essay_comments_list.length+'条</span>');
                     if (data.essay_comments_list.length > 2) {
                         var html = '';
                         for (var i = 0; i < 2; i++) {

@@ -478,10 +478,16 @@ def load_comments():
     """加载文章评论"""
     data = request.get_json()
     essay_title = data.get('essay_title')
-    essay_comments_all = Comments.query.filter_by(comment_essay=essay_title).order_by('-id').all()
+    essay_comments_all = Comments.query.filter_by(comment_essay=essay_title).order_by('-comment_like').all()
     essay_comments_list = []
     if essay_comments_all:
         for comments in essay_comments_all:
+            # 判断是不是作者的评论
+            essay = Essay.query.filter_by(essay_title=essay_title).first()
+            if comments.comment_user == essay.essay_push_user:
+                is_author = " | 作者"
+            else:
+                is_author = ""
             item = {
                 "comments_id": comments.id,
                 "comment_user": comments.comment_user,
@@ -489,7 +495,8 @@ def load_comments():
                 "comment_essay": comments.comment_essay,
                 "comment_text": comments.comment_text,
                 "comment_time": comments.comment_time,
-                "comment_like": comments.comment_like
+                "comment_like": comments.comment_like,
+                "is_author": is_author
             }
             essay_comments_list.append(item)
         return jsonify({'essay_comments_list': essay_comments_list})

@@ -278,6 +278,10 @@ video {
     float: right;
 }
 
+.user_head_img{
+    border-radius: 25px;
+}
+
 .form-control {
     width: 80%;
     height: auto;
