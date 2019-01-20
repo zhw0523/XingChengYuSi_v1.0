@@ -74,6 +74,11 @@ class Comments(db.Model):
     comment_like_ip = db.Column(db.Text())  # ip校验
 
 
+@app.errorhandler(404)
+def error_404(e):
+    """404页面"""
+    return render_template('html/404.html',e=e)
+
 @app.route('/')
 def index():
     """首页"""
