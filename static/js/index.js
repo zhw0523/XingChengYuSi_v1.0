@@ -23,6 +23,11 @@ $(function () {
 
         }
     });
+    //设置幻灯片时间
+    $('.carousel').carousel({
+        interval: 3000,
+        pause: "hover"
+    });
 
     //判断当前宽度是否为手机
     var windows_width = $(window).width();

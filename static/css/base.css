@@ -17,7 +17,6 @@ body{
 
 .phone_css {
     margin-top: 66px;
-    margin-bottom: 56px;
 }
 
 .phone_nav {
@@ -62,8 +61,8 @@ input:-webkit-autofill {
     }
 
     .phone_css {
-        padding-left: 10px;
-        padding-right: 10px;
+        padding-left: 0;
+        padding-right: 0;
     }
 
     .phone_nav {
@@ -117,7 +116,7 @@ input:-webkit-autofill {
         position: absolute;
         top: 0;
         left: 0;
-        margin-left: 10px;
+        margin-left: 5px;
         border: none;
     }
 
