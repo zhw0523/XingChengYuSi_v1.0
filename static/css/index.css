@@ -38,6 +38,7 @@
     background-color: #fff;
     color: #666;
 }
+
 /*热文推荐*/
 .hot_essay {
     background-color: #fff;
@@ -169,44 +170,55 @@
 }
 
 /*轮播图*/
-.Carousel{
+.Carousel {
     position: relative;
     min-width: 100%;
     height: 206px;
     border: #eaeaea solid 1px;
     margin-bottom: 20px;
 }
-.Carousel .img_list ul{
+
+.Carousel .img_list ul {
     position: absolute;
     list-style-type: none;
     padding: 0;
     width: 100%;
     height: 100%;
 }
-.Carousel .img_list ul li a{
+
+.Carousel .img_list ul li a {
     position: absolute;
     height: 100%;
     width: 100%;
 }
-.Carousel .img_list ul li a img{
+
+.Carousel .img_list ul li a img {
     height: 100%;
     width: 100%;
 }
 
-#myCarousel{
+#myCarousel {
     position: relative;
     min-width: 100%;
     height: 206px;
     margin-bottom: 20px;
 }
 
-#myCarousel .item{
+#myCarousel .item {
     width: 100%;
 }
 
-#myCarousel img{
+#myCarousel img {
     width: 100%;
     height: 206px;
+}
+
+.carousel-indicators {
+    bottom: 0;
+}
+
+.carousel-control {
+    width: 6%;
 }
 
 /*加载动画*/
@@ -259,8 +271,24 @@
     }
 }
 
-@media screen and (max-width: 768px){
-    .Carousel{
-        height: 120px;
+@media screen and (max-width: 768px) {
+    #myCarousel {
+        position: relative;
+        min-width: 100%;
+        height: 140px;
+        margin-bottom: 10px;
+    }
+
+    #myCarousel .item {
+        width: 100%;
+    }
+
+    #myCarousel img {
+        width: 100%;
+        height: 140px;
+    }
+
+    .carousel-control {
+        width: 8%;
     }
 }
