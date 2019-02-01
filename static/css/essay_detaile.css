@@ -275,7 +275,8 @@ video {
 
 .comments ul li {
     border-bottom: #eaeaea solid 1px;
-    padding: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
 }
 
 .comments .comment_info {
@@ -297,7 +298,7 @@ video {
 }
 
 .user_head_img{
-    border-radius: 25px;
+    border: #eaeaea solid 1px;
 }
 
 .form-control {

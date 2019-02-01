@@ -646,7 +646,7 @@ def upload():
 
         result = {
             "state": "SUCCESS",
-            "url": "http://192.168.0.107/static/files/" + dir_name + "/" + upfile.filename, #这里也改成你自己的路径
+            "url": "http://127.0.0.1:5000/static/files/" + dir_name + "/" + upfile.filename, #这里也改成你自己的路径
             "title": upfile.filename,
             "original": upfile.filename
         }
