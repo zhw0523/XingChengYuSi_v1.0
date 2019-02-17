@@ -221,7 +221,7 @@ $(function () {
                     });
                     $(this).click(function () {
                         var essay_url = $(this).children('h1').children('a').prop('href');
-                        // window.location = essay_url;
+                        window.location = essay_url;
                     })
                 })
 

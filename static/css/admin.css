@@ -1,3 +1,6 @@
+.container{
+    padding: 0;
+}
 .col-xs-12 {
     margin-top: 64px;
     background-color: #fff;
@@ -8,10 +11,6 @@
 
 .col-xs-12 h4 {
     font-weight: bold;
-}
-
-.control {
-    border-bottom: #eaeaea solid 1px;
 }
 
 .control ul {

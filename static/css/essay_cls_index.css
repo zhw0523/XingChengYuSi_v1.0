@@ -167,3 +167,16 @@
     height: 28px;
     line-height: 28px;
 }
+
+/*联系我们*/
+.contact{
+    background-color: #fff;
+    border: 1px solid #eaeaea;
+    margin-top: 20px;
+}
+
+.contact div{
+    padding-left: 10px;
+    line-height: 40px;
+    text-decoration: underline;
+}

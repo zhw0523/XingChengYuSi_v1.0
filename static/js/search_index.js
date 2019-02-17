@@ -32,7 +32,7 @@ $(function () {
                 contentType: 'application/json; charset=UTF-8',
                 success: function (data) {
                     if (data.msg == "null") {
-                        $('.search_index').html("<span>抱歉, 什么都没有搜到..</span>");
+                        $('.search_index').text("抱歉, 什么都没有搜到..");
                         $('.search_index').css("background-color", "#f5f6f7")
                     } else {
                         var html = "";
@@ -50,7 +50,7 @@ $(function () {
                             });
                             $(this).click(function () {
                                 var essay_url = $(this).children('h1').children('a').prop('href');
-                                //window.location = essay_url;
+                                window.location = essay_url;
                             });
                         });
                         //搜索文章列表，样式
