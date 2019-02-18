@@ -22,7 +22,7 @@ $(function () {
                                 <td>' + user.id + '</td>\
                                 <td>' + user.user_name + '</td>\
                                 <td>' + user.register_time + '</td>\
-                                <td><button style="background-color: #fff;border: #777 solid 1px">注销用户</button><span class="hint"></span></td>\
+                                <td><button style="background-color: #fff;color: #45B6F7;border: #777 solid 1px">注销用户</button><span class="hint"></span></td>\
                             </tr>';
         return html;
     }
