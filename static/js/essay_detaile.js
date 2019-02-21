@@ -8,9 +8,9 @@ $(function () {
     load_comments();
     //加载文章
     $('.essay_info').html($('.essay_content').val());
-
     //加载代码高亮
     SyntaxHighlighter.all();
+
     var w = $(window).width();
     if (w <= 768) {
         //手机界面//

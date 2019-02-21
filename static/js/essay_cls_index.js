@@ -26,7 +26,7 @@ $(function () {
     //分类文章
     function set_essay_li(essay) {
         var html = '<li>\
-                        <h1 style="margin: 0;font-weight: bold;font-size: 18px;padding: 0;border-left: 5px solid #1fa6e6"><a href="/essay/' + essay.essay_title + '" title="' + essay.essay_title + '">' + essay.essay_title + '</a></h1>\
+                        <h1 style="margin: 0;font-weight: bold;font-size: 18px;padding: 0;"><a href="/essay/' + essay.essay_title + '" title="' + essay.essay_title + '">' + essay.essay_title + '</a></h1>\
                         <span id="essay_span" style="display: none">' + essay.essay_content + '</span>\
                         <p id="essay_summary" style="font-size: 14px;margin-top: 10px;"></p>\
                         <p class="info">\
@@ -76,8 +76,8 @@ $(function () {
                         $(this).css("background-color", "#fff")
                     });
                     $(this).click(function () {
-                        //var essay_url = $(this).children('h1').children('a').prop('href');
-                        // window.location = essay_url;
+                        var essay_url = $(this).children('h1').children('a').prop('href');
+                        window.location = essay_url;
                     })
                 })
 
