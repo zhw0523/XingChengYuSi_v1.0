@@ -1,4 +1,7 @@
-
+.write_form{
+    overflow: auto;
+    padding: 5px;
+}
 #essay_title {
     padding-left: 6px;
     position: absolute;

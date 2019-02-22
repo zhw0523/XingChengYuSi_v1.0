@@ -8,11 +8,9 @@ from flask_script import Manager
 from jieba.analyse.analyzer import ChineseAnalyzer
 from PIL import Image, ExifTags
 
-
 import os
 
 app = Flask(__name__)
-
 
 # 配置数据库
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:weige521@127.0.0.1:3306/xingchengyusi'  # 链接数据库
@@ -41,11 +39,12 @@ class User(db.Model):
     user_pswd_md5 = db.Column(db.String(32))  # 用户密码，MD5加密32位
     register_time = db.Column(db.String(64))  # 注册时间
     email = db.Column(db.String(32), unique=True)  # 用户邮箱，唯一
-    attention = db.Column(db.Integer,default=0) # 关注数
-    Fan = db.Column(db.Integer, default=0) # 粉丝数
-    signature = db.Column(db.String(512), default='该用户很懒，还没有个人介绍') # 签名
-    avatar_url = db.Column(db.String(128), default="/static/img/icon.png") # 头像
-    attention_check = db.Column(db.Text(), default='') # 关注校验
+    attention = db.Column(db.Integer, default=0)  # 关注数
+    Fan = db.Column(db.Integer, default=0)  # 粉丝数
+    signature = db.Column(db.String(512), default='该用户很懒，还没有个人介绍')  # 签名
+    avatar_url = db.Column(db.String(128), default="/static/img/icon.png")  # 头像
+    attention_check = db.Column(db.Text(), default='')  # 关注校验
+
 
 class Essay(db.Model):
     """文章"""
@@ -80,20 +79,24 @@ class Comments(db.Model):
     comment_like = db.Column(db.Integer, default=0)  # 评论点赞
     comment_like_ip = db.Column(db.Text())  # ip校验
 
-#校验用户是否等陆
+
+# 校验用户是否等陆
 def check_user(func):
-    def warp(*args,**kwargs):
+    def warp(*args, **kwargs):
         name = session.get('username')
         if name:
-            return func(*args,**kwargs)
+            return func(*args, **kwargs)
         else:
             return redirect('/user_login')
+
     return warp
+
 
 @app.errorhandler(404)
 def error_404(e):
     """404页面"""
-    return render_template('html/404.html',e=e)
+    return render_template('html/404.html', e=e)
+
 
 @app.route('/')
 def index():
@@ -240,25 +243,29 @@ def user_center():
     """用户中心"""
     session_name = session.get('username')
     if session_name:
-        return redirect('/user_center/'+session_name)
+        return redirect('/user_center/' + session_name)
     else:
         return redirect('/user_login')
 
 
 @app.route('/user_center/<username>', methods=['GET'])
-@check_user
 def user_center_info(username):
     """用户中心信息"""
     uname = session.get('username')
     u = User.query.filter_by(user_name=uname).first()
     user_infos = User.query.filter_by(user_name=username).first()
     essay_number = Essay.query.filter_by(essay_push_user=user_infos.user_name).all()
-    # 如果当前的用户在已经等路的用户的关注里面就是1否则0
-    if user_infos.user_name in u.attention_check:
-        c = '1'
-    else:
-        c = '0'
-    return render_template('html/user_center.html', user_infos=user_infos,user_essay_number=len(essay_number),uname=uname,c=c)
+    try:
+        # 如果当前的用户在已经等路的用户的关注里面就是1否则0
+        if user_infos.user_name in u.attention_check:
+            c = '1'
+        else:
+            c = '0'
+        return render_template('html/user_center.html', user_infos=user_infos, user_essay_number=len(essay_number),
+                               uname=uname, c=c)
+    except:
+        return render_template('html/user_center.html', user_infos=user_infos, user_essay_number=len(essay_number),
+                               uname=uname, c='0')
 
 
 @app.route('/load_user_essay', methods=['POST'])
@@ -297,7 +304,7 @@ def sub_avatar():
     user.avatar_url = head_img_src
     db.session.add(user)
     db.session.commit()
-    return redirect('/user_center/'+uname)
+    return redirect('/user_center/' + uname)
 
 
 @app.route('/guanzhu', methods=['POST'])
@@ -310,14 +317,14 @@ def guanzhu():
         name_user = User.query.filter_by(user_name=name).first()
         gz_name_user = User.query.filter_by(user_name=gz_name).first()
         name_user.attention += 1
-        name_user.attention_check += (gz_name+',')
+        name_user.attention_check += (gz_name + ',')
         gz_name_user.Fan += 1
         db.session.add(name_user)
         db.session.add(gz_name_user)
         db.session.commit()
-        return jsonify({'msg':'ok'})
+        return jsonify({'msg': 'ok'})
     except:
-        return jsonify({'msg':'err'})
+        return jsonify({'msg': 'err'})
 
 
 @app.route('/qx_guanzhu', methods=['POST'])
@@ -330,14 +337,14 @@ def qx_guanzhu():
         name_user = User.query.filter_by(user_name=name).first()
         qxgz_name_user = User.query.filter_by(user_name=qxgz_name).first()
         name_user.attention -= 1
-        name_user.attention_check = name_user.attention_check.replace((qxgz_name+','),'')
+        name_user.attention_check = name_user.attention_check.replace((qxgz_name + ','), '')
         qxgz_name_user.Fan -= 1
         db.session.add(name_user)
         db.session.add(qxgz_name_user)
         db.session.commit()
-        return jsonify({'msg':'ok'})
+        return jsonify({'msg': 'ok'})
     except:
-        return jsonify({'msg':'err'})
+        return jsonify({'msg': 'err'})
 
 
 @app.route('/change_gq', methods=['POST'])
@@ -350,7 +357,7 @@ def change_gq():
     user.signature = gx_text
     db.session.add(user)
     db.session.commit()
-    return jsonify({'msg':'ok'})
+    return jsonify({'msg': 'ok'})
 
 
 @app.route('/exit_login', methods=['GET'])
@@ -643,10 +650,11 @@ def submit_comments():
     """发布文章评论"""
     user = session.get('username')
     if user:
+        users = User.query.filter_by(user_name=user).first()
         data = request.get_json()
         comment_info = data.get('comment_info')
         essay_title = data.get('essay_title')
-        head_img_url = '/static/img/icon.png'
+        head_img_url = users.avatar_url
         time = datetime.now().__str__()[:-7]
         comments = Comments(comment_user=user, comment_user_head=head_img_url, comment_essay=essay_title,
                             comment_text=comment_info, comment_time=time, comment_like_ip='')
@@ -690,7 +698,7 @@ def remove_comments():
 
 def resize_img(img_name):
     """压缩图片"""
-    path = "D:\\XingChengYuSi_v1.0\\static\\files\\image\\" #这里改成自己的存放图片的路径,windows路径
+    path = "D:\\XingChengYuSi_v1.0\\static\\files\\image\\"  # 这里改成自己的存放图片的路径,windows路径
     img_size = os.path.getsize(path + img_name)
     if img_size > 2048000:
         with Image.open(path + img_name) as im:
@@ -781,7 +789,7 @@ def upload():
 
         result = {
             "state": "SUCCESS",
-            "url": "http://192.168.43.114/static/files/" + dir_name + "/" + upfile.filename, #这里也改成你自己的路径
+            "url": "http://192.168.43.114/static/files/" + dir_name + "/" + upfile.filename,  # 这里也改成你自己的路径
             "title": upfile.filename,
             "original": upfile.filename
         }

@@ -1,121 +1,22 @@
 {% extends 'base.html' %}
 {% block content %}
-    <style>
-        .col-xs-3 {
-
-        }
-
-        .col-xs-9 {
-            padding: 0;
-            padding-left: 20px;
-        }
-
-        .center_header {
-            padding: 5px;
-            border-bottom: #eaeaea solid 1px;
-        }
-
-
-        .center_header button {
-            float: right;
-            margin-top: 8px;
-            background-color: #fff;
-            border: darkred solid 1px;
-        }
-
-        .center_header button span {
-            color: darkred;
-            font-weight: bold;
-        }
-
-        .info_xx a {
-            color: #333;
-        }
-
-        .info_xx a:hover {
-            color: #45B6F7;
-            transition: all 0.25s;
-        }
-
-        /*用户文章*/
-        .user_center_essay {
-            border: #eaeaea solid 1px;
-        }
-
-        .user_center_essay li {
-            border-bottom: #eaeaea solid 1px;
-            padding: 10px;
-            background-color: #fff;
-        }
-
-        .user_center_essay li span {
-            font-size: 13px;
-        }
-
-        .user_center_essay li .info {
-            margin: 0;
-        }
-
-        .user_center_essay li h1 a {
-            color: #555;
-            text-decoration: none;
-        }
-
-        .user_center_essay li h1 a:hover {
-            color: #45B6F7;
-            transition: all 0.25s;
-        }
-
-        .gx_text {
-            width: 200px;
-            height: 34px;
-            padding: 6px 12px;
-            font-size: 14px;
-            line-height: 1.42857143;
-            color: #555;
-            outline: none;
-            background-color: #fff;
-            border: 1px solid #555;
-            border-radius: 4px;
-        }
-
-        .gx_{
-            margin-top: 10px;
-        }
-
-        @media screen and (max-width: 768px) {
-            .col-xs-3 {
-                display: block;
-            }
-
-            .info_xx {
-                margin-top: 0;
-                margin-bottom: 10px;
-            }
-
-            .user_center_essay {
-                padding: 5px !important;
-            }
-
-        }
-
-    </style>
     <div class="container phone_css">
         <div class="col-xs-3">
             <input type="hidden" id="name" value="{{ uname }}">
             <input type="hidden" id="user_name" value="{{ user_infos.user_name }}">
-            <div style="background-color: #fff;">
+            <div style="background-color: #fff;border: #eaeaea solid 1px;">
                 <div class="center_header">
                     <a href="javascript:void(0)" id="replace_avatar" title="更换头像"><img src="{{ user_infos.avatar_url }}"
                                                                                        alt="" width="50px"
-                                                                                       height="50px" style="border-radius: 25px;"></a>
+                                                                                       height="50px"
+                                                                                       style="border-radius: 25px;"></a>
                     <form action="/sub_avatar" method="post" style="display: none" enctype="multipart/form-data">
                         <input type="file" id="choose_avatar" name="files">
                         <input type="hidden" name="username" value="{{ user_infos.user_name }}">
                         <button type="submit" id="sub_avatar"></button>
                     </form>
                     <span style="font-weight: bold">{{ user_infos.user_name }}</span>
-                    {% if user_infos.user_name == uname%}
+                    {% if user_infos.user_name == uname %}
 
                     {% else %}
                         {% if c == '1' %}
@@ -125,24 +26,26 @@
                         {% endif %}
                     {% endif %}
                 </div>
-                <div style="font-size: 13px;padding: 5px;font-weight: bold;border-bottom: #eaeaea solid 1px">
+                <div class="user_infos">
                     <p>关注：<span>{{ user_infos.attention }}</span></p>
                     <p>粉丝：<span>{{ user_infos.Fan }}</span></p>
                     <p>博文：<span>{{ user_essay_number }}</span></p>
+                    <p style="margin: 0">简介：<span class="gq_infos">{{ user_infos.signature }}</span></p>
                 </div>
-                <div style="word-break: break-all;padding: 5px;">{{ user_infos.signature  }}</div>
             </div>
-            {% if user_infos.user_name == uname%}
-                <div class="info_xx" style="margin-top: 15px;background-color: #fff;padding: 5px">
+            {% if user_infos.user_name == uname %}
+                <div class="info_xx">
                     <a href="/user_write_essay/{{ user_infos.user_name }}">发布博文</a>
                     <span>|</span>
-                    <a href="javascript:void(0)" class="change_gq">更改个签</a>
+                    <a href="javascript:void(0)" class="change_gq">更改简介</a>
                     <span>|</span>
                     <a href="/exit_login">退出登录</a>
                 </div>
                 <div class="gx_" style="display: none">
-                    <input type="text" class="gx_text" placeholder="个性签名">
-                    <button class="btn gx_btn" style="margin-bottom: 4px;background-color: #fff;border: #555 solid 1px;color: #555">更改</button>
+                    <input type="text" class="gx_text" placeholder="简介">
+                    <button class="btn gx_btn"
+                            style="margin-bottom: 4px;background-color: #fff;border: #555 solid 1px;color: #555">更改
+                    </button>
                     <span class="gq_prompt" style="display: none"></span>
                 </div>
             {% endif %}
@@ -153,187 +56,6 @@
             </ul>
         </div>
     </div>
-    <script>
-        $(function () {
-            var w = $(window).width();
-            if (w <= 768) {
-                $('.col-xs-3').removeClass('col-xs-3').addClass('col-xs-12');
-            }
-
-            //更换头像
-            $('#replace_avatar').click(function () {
-                $('#choose_avatar').click();
-                function check_img() {
-                    var file = $('#choose_avatar').val();
-                    var index1 = file.lastIndexOf(".");
-                    var index2 = file.length;
-                    var suffix = file.substring(index1 + 1, index2);//后缀名
-                    if (file) {
-                        if (suffix == 'jpg' || suffix == 'png') {
-                            return true;
-                        } else {
-                            alert('请选择图片作为头像');
-                            return false;
-                        }
-                    } else {
-                        return true;
-                    }
-
-                }
-
-                $('#choose_avatar').on('change', function () {
-                    if (check_img() == true) {
-                        $('#sub_avatar').click();
-                    }
-                })
-            });
-
-            //点击关注
-            $('.guanzhu').click(function () {
-                var user_name = $("#user_name").val();
-                var name = $('#name').val();
-                $.ajax({
-                    url: "/guanzhu",
-                    type: "POST",
-                    dataType: "json",
-                    data: JSON.stringify({"gz_name": user_name,"name":name}),
-                    contentType: 'application/json; charset=UTF-8',
-                    success: function (data) {
-                        if(data.msg=='ok'){
-                            window.location.reload();
-                        }
-                    },
-                    error: function () {
-                        alert('关注失败')
-                    }
-                });
-            });
-            //点击取消关注
-            $('.qx_guanzhu').click(function () {
-                var user_name = $("#user_name").val();
-                var name = $('#name').val();
-                $.ajax({
-                    url: "/qx_guanzhu",
-                    type: "POST",
-                    dataType: "json",
-                    data: JSON.stringify({"qxgz_name": user_name,"name":name}),
-                    contentType: 'application/json; charset=UTF-8',
-                    success: function (data) {
-                        if(data.msg=='ok'){
-                            window.location.reload();
-                        }
-                    },
-                    error: function () {
-                        alert('取消关注失败')
-                    }
-                });
-            });
-
-            //点击更改签名
-            $('.change_gq').click(function () {
-                $('.gx_').fadeToggle();
-            });
-
-            //提交更改个签
-            $('.gx_btn').click(function () {
-               var gx_text = $('.gx_text').val();
-               function check_gq_text() {
-                   if(gx_text == ""){
-                       $('.gq_prompt').text('个性签名不能为空').hide();
-                       return false;
-                   }else if (gx_text.length > 512) {
-                       $('.gq_prompt').text('不能超过512个字符').hide();
-                       return false;
-                   }else {
-                       return true;
-                   }
-               }
-               if (check_gq_text() == true) {
-                   var uname = $('#name').val();
-                   $.ajax({
-                    url: "/change_gq",
-                    type: "POST",
-                    dataType: "json",
-                    data: JSON.stringify({"uname":uname,"gx_text":gx_text}),
-                    contentType: 'application/json; charset=UTF-8',
-                    success: function (data) {
-                        if(data.msg=='ok'){
-                            window.location.reload();
-                        }
-                    },
-                    error: function () {
-                        alert('更改失败')
-                    }
-                });
-               }
-            });
-
-            //用户文章
-            function set_essay_li(essay) {
-                var html = '<li>\
-                        <h1 style="margin: 0;font-weight: bold;font-size: 18px;padding: 0;"><a href="/essay/' + essay.essay_title + '" title="' + essay.essay_title + '">' + essay.essay_title + '</a></h1>\
-                        <span id="essay_span" style="display: none">' + essay.essay_content + '</span>\
-                        <p id="essay_summary" style="font-size: 14px;margin-top: 10px;"></p>\
-                        <p class="info">\
-                            <span class="glyphicon glyphicon-user"></span><span>' + essay.essay_push_user + '</span>\
-                            <span class="glyphicon glyphicon-time"\
-                                  style="padding-left: 12px"></span><span>' + essay.essay_push_time + '</span>\
-                            <span class="glyphicon glyphicon-paperclip" style="padding-left: 12px"></span><a href="/essay_cls/' + essay.essay_cls + '" style="color:#333">' + essay.essay_cls + '</a>\
-                            <span class="glyphicon glyphicon-eye-open"\
-                                  style="padding-left: 12px"></span><span>阅读(' + essay.essay_scan + ')</span>\
-                        </p>\
-                    </li>';
-                return html;
-            }
-
-            //加载用户文章
-            function load_user_essay() {
-                var user_name = $("#user_name").val();
-                $.ajax({
-                    url: "/load_user_essay",
-                    type: "POST",
-                    dataType: "json",
-                    data: JSON.stringify({"user_name": user_name}),
-                    contentType: 'application/json; charset=UTF-8',
-                    success: function (data) {
-                        if (data.essay_user_list == "null") {
-                            $('.user_center_essay').html("该用户暂无文章");
-                            $('.user_center_essay').css({"background-color": "#fff", "padding-left": "10px"});
-                        } else {
-                            var html = '';
-                            for (var i = 0; i < data.essay_user_list.length; i++) {
-                                html += set_essay_li(data.essay_user_list[i]);
-                            }
-                            $('.user_center_essay').html(html);
-                        }
-
-                        //删除字符串中的HTML标签
-                        function del_html_tag(str) {
-                            return str.replace(/<[^>]+>/g, '')
-                        }
-
-                        //首页文章列表，样式
-                        $('.user_center_essay li').each(function () {
-                            $(this).children('#essay_summary').text(del_html_tag($(this).children('#essay_span').text().substr(0, 64) + "..."))
-                            $(this).mouseover(function () {
-                                $(this).css("background-color", "#f5f6f7")
-                            }).mouseout(function () {
-                                $(this).css("background-color", "#fff")
-                            });
-                            $(this).click(function () {
-                                var essay_url = $(this).children('h1').children('a').prop('href');
-                                window.location = essay_url;
-                            })
-                        })
-
-                    },
-                    error: function () {
-                        alert('加载分类文章失败')
-                    }
-                });
-            }
-
-            load_user_essay();
-        })
-    </script>
+    <link rel="stylesheet" href="{{ url_for("static", filename="css/user_center.css") }}">
+    <script src="{{ url_for("static", filename="js/user_center.js") }}"></script>
 {% endblock content %}

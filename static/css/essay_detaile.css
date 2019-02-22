@@ -107,7 +107,7 @@ video {
 
 .next_or_prev a {
     color: #555;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .next_or_prev a:hover {
@@ -311,6 +311,7 @@ video {
 }
 
 .user_head_img{
+    border-radius: 25px;
     border: #eaeaea solid 1px;
 }
 

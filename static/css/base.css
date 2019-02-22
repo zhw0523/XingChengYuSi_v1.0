@@ -95,7 +95,7 @@ input:-webkit-autofill {
         border-bottom: #303C4A solid 1px;
     }
 
-    #cehua ul li a {
+    #cehua a{
         font-size: 15px;
         color: #fff;
     }

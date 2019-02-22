@@ -63,8 +63,8 @@ $(function () {
     function set_comments_ul(comment) {
         var html = '<li>\
                             <div>\
-                                <img src="' + comment.comment_user_head + '" alt="" class="user_head_img" width="40px" height="40px">\
-                                <strong class="comment_user">' + comment.comment_user + '<span style="color: #777;font-weight: 100;">'+ comment.is_author +'</span></strong>\
+                                <a href="/user_center/' + comment.comment_user + '"><img src="' + comment.comment_user_head + '" alt="' + comment.comment_user + '" class="user_head_img" width="40px" height="40px"></a>\
+                                <a style="text-decoration: underline;color: #555;" href="/user_center/' + comment.comment_user + '"><strong class="comment_user">' + comment.comment_user + '</strong></a><span style="color: #777;font-weight: 100;">'+ comment.is_author +'</span>\
                             </div>\
                             <div style="padding-left: 44px;">\
                                 <p class="comment_info">' + comment.comment_text + '</p>\
