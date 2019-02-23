@@ -55,6 +55,9 @@
     .edui-default .edui-dialog-content {
         width: 376px !important;
     }
+    .edui-default .edui-dialog{
+        margin-top: 10px;
+    }
 
     /*图片上传手机样式
     .edui-default .edui-dialog-closebutton .edui-button-body {
