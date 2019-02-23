@@ -6,10 +6,18 @@
             <input type="hidden" id="user_name" value="{{ user_infos.user_name }}">
             <div style="background-color: #fff;border: #eaeaea solid 1px;">
                 <div class="center_header">
-                    <a href="javascript:void(0)" id="replace_avatar" title="更换头像"><img src="{{ user_infos.avatar_url }}"
-                                                                                       alt="" width="50px"
-                                                                                       height="50px"
-                                                                                       style="border-radius: 25px;"></a>
+                    {% if user_infos.user_name == uname %}
+                        <a href="javascript:void(0)" id="replace_avatar" title="更换头像"><img
+                                src="{{ user_infos.avatar_url }}"
+                                alt="" width="50px"
+                                height="50px"
+                                style="border-radius: 25px;"></a>
+                    {% else %}
+                        <img src="{{ user_infos.avatar_url }}"
+                             alt="" width="50px"
+                             height="50px"
+                             style="border-radius: 25px;">
+                    {% endif %}
                     <form action="/sub_avatar" method="post" style="display: none" enctype="multipart/form-data">
                         <input type="file" id="choose_avatar" name="files">
                         <input type="hidden" name="username" value="{{ user_infos.user_name }}">
