@@ -2,18 +2,23 @@ $(function () {
 
     function set_search_ret(ret) {
         var html = '<li>\
-                        <h1 style="margin: 0;font-weight: bold;font-size: 18px;padding: 0;border-left: 5px solid #1fa6e6"><a href="/essay/' + ret.essay_title + '" title="' + ret.essay_title + '">' + ret.essay_title + '</a></h1>\
-                        <p id="essay_summary" style="font-size: 14px;margin-top: 10px;">' + ret.essay_content + '</p>\
-                        <p class="info">\
-                            <span class="glyphicon glyphicon-user"></span><span>' + ret.essay_push_user + '</span>\
-                            <span class="glyphicon glyphicon-time"\
-                                  style="padding-left: 12px"></span><span>' + ret.essay_push_time + '</span>\
-                            <span class="glyphicon glyphicon-paperclip" style="padding-left: 12px"></span><a href="/essay_cls/' + ret.essay_cls + '" style="color:#333">' + ret.essay_cls + '</a>\
-                            <span class="glyphicon glyphicon-eye-open"\
-                                  style="padding-left: 12px"></span><span>阅读(' + ret.essay_scan + ')</span>\
-                        </p>\
+                        <h1 style="height: 24px;line-height: 24px;font-size: 18px;font-weight: bold;margin-top: 0;margin-bottom: 4px;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;"><a href="/essay/' + ret.essay_title + '" title="' + ret.essay_title + '">' + ret.essay_title + '</a></h1>\
+                        <span id="essay_span" style="display: none">' + ret.essay_content + '</span>\
+                        <p id="essay_summary" style="font-size: 14px;color: #8a8a8a;margin-bottom: 4px;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;height: 24px;line-height: 24px"></p>\
+                        <dl class="info">\
+                            <dl><a href="/user_center/' + ret.essay_push_user + '"><img src="' + ret.essay_user_headimg_url + '" alt="" class="usr_img"></a></dl>\
+                            <dd><a class="user_name_link" href="/user_center/' + ret.essay_push_user + '">' + ret.essay_push_user + '</a></dd><div class="interval"></div>\
+                            <dd><a href="/essay_cls/' + ret.essay_cls + '" class="essay_cls_link">' + ret.essay_cls + '</a></dd><div class="interval"></div>\
+                            <dd>' + ret.essay_push_time + '</dd>\
+                            <dd style="float: right"><a class="essay_scan_link" href="/essay/' + ret.essay_title + '"><span style="color: #8a8a8a;margin-right: 5px;">阅读数</span><span>' + ret.essay_scan + '</span></a></dd>\
+                        </dl>\
                     </li>';
         return html;
+    }
+
+    //删除字符串中的HTML标签
+    function del_html_tag(str) {
+        return str.replace(/<[^>]+>/g, '')
     }
 
     //搜索
@@ -43,14 +48,12 @@ $(function () {
 
 
                         $('.search_index li').each(function () {
+                            $(this).children('#essay_summary').text(del_html_tag($(this).children('#essay_span').text().substr(0, 256)));
+
                             $(this).mouseover(function () {
                                 $(this).css("background-color", "#f5f6f7")
                             }).mouseout(function () {
                                 $(this).css("background-color", "#fff")
-                            });
-                            $(this).click(function () {
-                                var essay_url = $(this).children('h1').children('a').prop('href');
-                                window.location = essay_url;
                             });
                         });
                         //搜索文章列表，样式

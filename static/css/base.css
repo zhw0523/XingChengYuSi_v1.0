@@ -1,3 +1,4 @@
+
 body{
     font-family: 'Microsoft YaHei','SF Pro Display',Roboto,Noto,Arial,'PingFang SC',sans-serif;
 }
@@ -24,6 +25,10 @@ body{
     display: none;
 }
 
+.div_box{
+    padding: 10px;
+}
+
 body {
     font-size: 14px;
     line-height: 1.57142857;
@@ -35,6 +40,73 @@ body {
 /*防止input框变黄*/
 input:-webkit-autofill {
     box-shadow: 0 0 0px 1000px white inset !important;
+}
+
+.info {
+    margin: 0;
+    font-size: 14px;
+    color: #999;
+    height: 24px;
+    line-height: 24px;
+}
+
+.info dl {
+    float: left;
+    margin: 0;
+}
+
+.info dd {
+    float: left;
+}
+
+.usr_img {
+    display: block;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    object-fit: cover;
+    overflow: hidden;
+    margin-top: -1px!important;
+}
+
+.user_name_link{
+    margin-left: 5px;color: #3d3d3d;
+}
+
+.user_name_link:hover{
+    text-decoration: none;
+    color: #157dcf;
+}
+.essay_cls_link{
+    color: #999;
+}
+.essay_cls_link:hover{
+    text-decoration: none;
+    color: #157dcf;
+}
+.essay_scan_link:hover{
+    text-decoration: none;
+    color: #00b7ee;
+}
+
+.essay_cls {
+    color: #999;
+}
+
+.essay_cls:hover {
+    color: #157dcf;
+    text-decoration: none;
+}
+
+.interval {
+    float: left;
+    width: 1px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #e0e0e0;
+    margin-top: 5px;
+    margin-left: 8px;
+    margin-right: 8px;
 }
 
 .go_top {
@@ -54,6 +126,123 @@ input:-webkit-autofill {
 .go_top .glyphicon {
     top: 9px;
     right: -5px;
+}
+
+/*热文推荐*/
+.hot_essay {
+    background-color: #fff;
+    border: 1px solid #eaeaea;
+}
+
+.hot_essay ul {
+    list-style-type: none;
+}
+
+.hot_essay ul li {
+    height: 34px;
+    line-height: 34px;
+    border-bottom: #eee solid 0.5px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.hot_essay ul li a {
+    padding-left: 10px;
+    font-size: 14px;
+    color: #666;
+    text-decoration: none;
+}
+
+.hot_essay ul li a:hover {
+    color: #45B6F7;
+    transition: all 0.25s;
+}
+
+/*文章分类*/
+.essay_classification {
+    background-color: #fff;
+    border: 1px solid #eaeaea;
+    margin-top: 20px;
+}
+
+.essay_classification ul {
+    color: #666;
+    padding-left: 26px !important;
+}
+
+.essay_classification ul li {
+    height: 28px;
+    line-height: 28px;
+}
+
+.essay_classification ul li a {
+    font-size: 14px;
+    color: #666;
+}
+
+.essay_classification ul li a:hover {
+    color: #45B6F7;
+    transition: all 0.25s;
+}
+
+/*友情链接*/
+.Links {
+    background-color: #fff;
+    border: 1px solid #eaeaea;
+    margin-top: 20px;
+}
+
+.Links ul {
+    list-style-type: none;
+    color: #666;
+    padding-left: 10px!important;
+}
+
+.Links ul li {
+    height: 28px;
+    line-height: 28px;
+}
+
+.Links ul li a {
+    font-size: 14px;
+    color: #666;
+}
+
+.Links ul li a:hover {
+    color: #45B6F7;
+    transition: all 0.25s;
+}
+
+/*网站统计*/
+.statistics {
+    background-color: #fff;
+    border: 1px solid #eaeaea;
+    margin-top: 20px;
+}
+
+.statistics ul {
+    list-style-type: none;
+    color: #666;
+    padding-left: 10px!important;
+}
+
+.statistics ul li {
+    height: 28px;
+    line-height: 28px;
+}
+
+/*联系我们*/
+.contact {
+    background-color: #fff;
+    border: 1px solid #eaeaea;
+    margin-top: 20px;
+}
+
+.contact div {
+    padding-left: 10px;
+    line-height: 40px;
+    text-decoration: underline;
 }
 
 @media screen and (max-width: 768px) {

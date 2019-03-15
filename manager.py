@@ -25,8 +25,8 @@ app.config['SECRET_KEY'] = os.urandom(24)
 
 # 实例数据库对象
 db = SQLAlchemy(app)
-# 初始化
-flask_whooshalchemyplus.init_app(app)
+# 初始化 0.7.5版本
+#flask_whooshalchemyplus.init_app(app)
 
 manager = Manager(app)
 
@@ -154,6 +154,7 @@ def load_index_essay():
     for essay in essay_sql_list:
         # 查询评论条数
         essay_comments_len = Comments.query.filter_by(comment_essay=essay.essay_title).all()
+        usr = User.query.filter_by(user_name=essay.essay_push_user).first()
         essay_info = {
             "essay_id": essay.id,
             "essay_title": essay.essay_title,
@@ -162,7 +163,8 @@ def load_index_essay():
             "essay_push_time": essay.essay_push_time,
             "essay_push_user": essay.essay_push_user,
             "essay_scan": essay.essay_scan,
-            "essay_comments_len": len(essay_comments_len)
+            "essay_comments_len": len(essay_comments_len),
+            "essay_user_headimg_url": usr.avatar_url,
         }
         essay_list.append(essay_info)
     return jsonify({"essay_list": essay_list})
@@ -171,7 +173,8 @@ def load_index_essay():
 @app.route('/search_index')
 def search_index():
     """文章搜索首页"""
-    flask_whooshalchemyplus.index_one_model(Essay)
+    #flask_whooshalchemyplus.index_one_model(Essay) 0.7.5版本
+    flask_whooshalchemyplus.index_all(app) # 0.7.4
     return render_template('html/search_index.html')
 
 
@@ -186,14 +189,16 @@ def search_result():
         search_result_list = []
         for search_ret in search_result_all:
             dr = re.compile(r'<[^>]+>', re.S)
+            usr = User.query.filter_by(user_name=search_ret.essay_push_user).first()
             data = {
                 "essay_id": search_ret.id,
                 "essay_title": search_ret.essay_title,
-                "essay_content": dr.sub('', search_ret.essay_content)[:64],
+                "essay_content": search_ret.essay_content,
                 "essay_cls": search_ret.essay_cls,
                 "essay_push_time": search_ret.essay_push_time,
                 "essay_push_user": search_ret.essay_push_user,
-                "essay_scan": search_ret.essay_scan
+                "essay_scan": search_ret.essay_scan,
+                "essay_user_headimg_url": usr.avatar_url,
             }
             search_result_list.append(data)
         return jsonify({"search_result_list": search_result_list})
@@ -277,6 +282,7 @@ def load_user_essay():
     essay_user_list = []
     if essay_user_all:
         for essay in essay_user_all:
+            usr = User.query.filter_by(user_name=essay.essay_push_user).first()
             essay_info = {
                 "essay_id": essay.id,
                 "essay_title": essay.essay_title,
@@ -284,7 +290,8 @@ def load_user_essay():
                 "essay_cls": essay.essay_cls,
                 "essay_push_time": essay.essay_push_time,
                 "essay_push_user": essay.essay_push_user,
-                "essay_scan": essay.essay_scan
+                "essay_scan": essay.essay_scan,
+                "essay_user_headimg_url": usr.avatar_url,
             }
             essay_user_list.append(essay_info)
         return jsonify({"essay_user_list": essay_user_list})
@@ -447,10 +454,7 @@ def load_hot_essay():
     hot_essay_all = Essay.query.order_by('-essay_scan').all()
     hot_essay_list = []
     for hot_essay in hot_essay_all[:5]:
-        if len(hot_essay.essay_title) >= 20:
-            essay_title = hot_essay.essay_title[:20] + "..."
-        else:
-            essay_title = hot_essay.essay_title
+        essay_title = hot_essay.essay_title
         data = {
             "essay_title": essay_title,
             "essay_url": "/essay/" + hot_essay.essay_title,
@@ -541,6 +545,7 @@ def load_cls_essay():
     essay_cls_list = []
     if essay_cls_all:
         for essay in essay_cls_all:
+            usr = User.query.filter_by(user_name=essay.essay_push_user).first()
             essay_info = {
                 "essay_id": essay.id,
                 "essay_title": essay.essay_title,
@@ -548,7 +553,8 @@ def load_cls_essay():
                 "essay_cls": essay.essay_cls,
                 "essay_push_time": essay.essay_push_time,
                 "essay_push_user": essay.essay_push_user,
-                "essay_scan": essay.essay_scan
+                "essay_scan": essay.essay_scan,
+                "essay_user_headimg_url": usr.avatar_url,
             }
             essay_cls_list.append(essay_info)
         return jsonify({"essay_cls_list": essay_cls_list})
@@ -731,7 +737,7 @@ def upload():
         # 上传图片
         "imageActionName": "uploadimage",
         "imageFieldName": "upfile",
-        "imageMaxSize": 4096000,
+        "imageMaxSize": 6291456,
         "imageAllowFiles": [".png", ".jpg", ".jpeg", ".gif", ".bmp"],
         "imageCompressEnable": "true",
         "imageCompressBorder": 1600,
@@ -789,7 +795,7 @@ def upload():
 
         result = {
             "state": "SUCCESS",
-            "url": "http://192.168.43.114/static/files/" + dir_name + "/" + upfile.filename,  # 这里也改成你自己的路径
+            "url": "http://192.168.0.109/static/files/" + dir_name + "/" + upfile.filename,  # 这里也改成你自己的路径
             "title": upfile.filename,
             "original": upfile.filename
         }
@@ -797,4 +803,6 @@ def upload():
 
 
 if __name__ == '__main__':
+    db.drop_all()
+    db.create_all()
     manager.run()

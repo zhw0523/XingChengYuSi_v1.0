@@ -133,17 +133,16 @@ $(function () {
     //首页文章
     function set_essay_li(essay) {
         var html = '<li>\
-                        <h1 style="margin: 0;font-weight: bold;font-size: 18px;padding: 0;"><a href="/essay/' + essay.essay_title + '" title="' + essay.essay_title + '">' + essay.essay_title + '</a></h1>\
+                        <h1 style="height: 24px;line-height: 24px;font-size: 18px;font-weight: bold;margin-top: 0;margin-bottom: 4px;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;"><a href="/essay/' + essay.essay_title + '" title="' + essay.essay_title + '">' + essay.essay_title + '</a></h1>\
                         <span id="essay_span" style="display: none">' + essay.essay_content + '</span>\
-                        <p id="essay_summary" style="font-size: 14px;margin-top: 10px;"></p>\
-                        <p class="info">\
-                            <span class="glyphicon glyphicon-user"></span><span>' + essay.essay_push_user + '</span>\
-                            <span class="glyphicon glyphicon-time"\
-                                  style="padding-left: 12px"></span><span>' + essay.essay_push_time + '</span>\
-                            <span class="glyphicon glyphicon-paperclip" style="padding-left: 12px"></span><a href="/essay_cls/' + essay.essay_cls + '" style="color:#333">' + essay.essay_cls + '</a>\
-                            <span class="glyphicon glyphicon-eye-open"\
-                                  style="padding-left: 12px"></span><span>阅读(' + essay.essay_scan + ')</span>\
-                        </p>\
+                        <p id="essay_summary" style="font-size: 14px;color: #8a8a8a;margin-bottom: 4px;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;height: 24px;line-height: 24px"></p>\
+                        <dl class="info">\
+                            <dl><a href="/user_center/' + essay.essay_push_user + '"><img src="'+essay.essay_user_headimg_url+'" alt="" class="usr_img"></a></dl>\
+                            <dd><a class="user_name_link" href="/user_center/' + essay.essay_push_user + '">' + essay.essay_push_user + '</a></dd><div class="interval"></div>\
+                            <dd><a href="/essay_cls/'+essay.essay_cls+'" class="essay_cls_link">'+ essay.essay_cls +'</a></dd><div class="interval"></div>\
+                            <dd>' + essay.essay_push_time + '</dd>\
+                            <dd style="float: right"><a class="essay_scan_link" href="/essay/' + essay.essay_title + '"><span style="color: #8a8a8a;margin-right: 5px;">阅读数</span><span>' + essay.essay_scan + '</span></a></dd>\
+                        </dl>\
                     </li>';
         return html;
     }
@@ -187,16 +186,17 @@ $(function () {
 
                         //首页文章列表，样式
                         $('.index li').each(function () {
-                            $(this).children('#essay_summary').text(del_html_tag($(this).children('#essay_span').text().substr(0, 64) + "..."))
+                            $(this).children('#essay_summary').text(del_html_tag($(this).children('#essay_span').text()));
                             $(this).mouseover(function () {
                                 $(this).css("background-color", "#f5f6f7")
                             }).mouseout(function () {
                                 $(this).css("background-color", "#fff")
                             });
+                            /*
                             $(this).click(function () {
                                 var essay_url = $(this).children('h1').children('a').prop('href');
                                 window.location = essay_url;
-                            })
+                            })*/
 
                         })
                     }
@@ -219,10 +219,11 @@ $(function () {
                     }).mouseout(function () {
                         $(this).css("background-color", "#fff")
                     });
+                    /*
                     $(this).click(function () {
                         var essay_url = $(this).children('h1').children('a').prop('href');
                         window.location = essay_url;
-                    })
+                    })*/
                 })
 
             },

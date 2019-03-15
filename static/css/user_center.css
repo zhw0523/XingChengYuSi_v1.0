@@ -8,7 +8,7 @@
 }
 
 .center_header {
-    padding: 5px;
+    padding: 4px 10px;
     border-bottom: #eaeaea solid 1px;
 }
 
@@ -41,7 +41,7 @@
 
 .user_center_essay li {
     border-bottom: #eaeaea solid 1px;
-    padding: 10px;
+    padding: 16px 24px;
     background-color: #fff;
 }
 
@@ -90,7 +90,7 @@
 
 .user_infos {
     font-size: 13px;
-    padding: 5px;
+    padding: 4px 10px;
     font-weight: bold;
 }
 
@@ -130,11 +130,7 @@
     }
 
     .user_center_essay li {
-        padding: 5px;
-    }
-
-    .user_center_essay {
-        margin-top: 5px !important;
+        padding: 10px 16px;
     }
 
     .gx_ {
