@@ -795,7 +795,7 @@ def upload():
 
         result = {
             "state": "SUCCESS",
-            "url": "http://192.168.0.109/static/files/" + dir_name + "/" + upfile.filename,  # 这里也改成你自己的路径
+            "url": "http://192.168.0.111/static/files/" + dir_name + "/" + upfile.filename,  # 这里也改成你自己的路径
             "title": upfile.filename,
             "original": upfile.filename
         }
@@ -803,6 +803,4 @@ def upload():
 
 
 if __name__ == '__main__':
-    db.drop_all()
-    db.create_all()
     manager.run()

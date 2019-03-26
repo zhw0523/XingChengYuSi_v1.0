@@ -26,6 +26,10 @@ $(function () {
         //加载文章分类
         load_essay_class();
     }
+    //点击显示二维码
+    $('#show_sqm').click(function () {
+        $('.alipay_skm').slideToggle()
+    });
 
     //文章详细
     function set_essay_detaile(essay) {

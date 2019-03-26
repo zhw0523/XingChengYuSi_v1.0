@@ -42,7 +42,7 @@ input:-webkit-autofill {
     box-shadow: 0 0 0px 1000px white inset !important;
 }
 
-.info {
+.info_dl {
     margin: 0;
     font-size: 14px;
     color: #999;
@@ -50,12 +50,12 @@ input:-webkit-autofill {
     line-height: 24px;
 }
 
-.info dl {
+.info_dl dl {
     float: left;
     margin: 0;
 }
 
-.info dd {
+.info_dl dd {
     float: left;
 }
 
