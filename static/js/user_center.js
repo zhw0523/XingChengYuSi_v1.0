@@ -33,6 +33,36 @@ $(function () {
         })
     });
 
+    //选择我的收款码
+    $('.change_rcode').click(function () {
+        $('#rcode_file').click();
+
+        function check_img() {
+            var file = $('#rcode_file').val();
+            var index1 = file.lastIndexOf(".");
+            var index2 = file.length;
+            var suffix = file.substring(index1 + 1, index2);//后缀名
+            if (file) {
+                if (suffix == 'jpg' || suffix == 'png') {
+                    return true;
+                } else {
+                    alert('请选择图片作为收款码');
+                    return false;
+                }
+            } else {
+                return true;
+            }
+
+        }
+
+        $('#rcode_file').on('change', function () {
+            if (check_img() == true) {
+                $('#sub_rcode').click();
+            }
+        })
+
+    })
+
     //点击关注
     $('.guanzhu').click(function () {
         var user_name = $("#user_name").val();

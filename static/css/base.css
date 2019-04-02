@@ -1,8 +1,4 @@
 
-body{
-    font-family: 'Microsoft YaHei','SF Pro Display',Roboto,Noto,Arial,'PingFang SC',sans-serif;
-}
-
 .col-xs-9 {
     padding: 0;
     padding-right: 20px;
@@ -30,11 +26,8 @@ body{
 }
 
 body {
-    font-size: 14px;
-    line-height: 1.57142857;
     background-color: #f5f6f7;
-    color: #333;
-    min-height: 100%
+    font-family: 'Microsoft YaHei','SF Pro Display',Roboto,Noto,Arial,'PingFang SC',sans-serif;
 }
 
 /*防止input框变黄*/
@@ -239,7 +232,7 @@ input:-webkit-autofill {
     margin-top: 20px;
 }
 
-.contact div {
+.div_box div {
     padding-left: 10px;
     line-height: 40px;
     text-decoration: underline;

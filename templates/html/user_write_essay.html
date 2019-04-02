@@ -1,19 +1,23 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="container phone_css" style="margin-top: 66px;">
+    <div class="container phone_css" style="margin-top: 66px;overflow: auto">
 
         <div class="write_form">
             <!--发布文章表单-->
             <form action="/submit_essay" method="post">
+                <div style="line-height: 23px;margin-bottom: 2px;">
+                    <input type="text"
+                           placeholder="为你的文章取个名字吧"
+                           id="essay_title"
+                           name="essay_title">
+                    <select name="select" id="select">
+                        <option value="0">可选文章所属分类</option>
+                    </select>
+                </div>
+                <input type="hidden" name="essay_cls" id="essay_cls" value="">
                 <script class="editor" name="content" id="content"></script>
                 <input type="hidden" name="user" id="uname" value="{{ username }}">
-
-                <input type="text" placeholder="为你的文章取个名字吧" id="essay_title" name="essay_title">
-                <select name="select" id="select">
-                    <option value="0">可选文章所属分类</option>
-                </select>
-                <input type="hidden" name="essay_cls" id="essay_cls" value="">
                 <button class="btn btn-default" id="sub_content"
                         style="margin-top: 4px;width: 100%;margin-bottom: 60px;outline: none" type="submit">提交
                 </button>

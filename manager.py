@@ -39,6 +39,7 @@ class User(db.Model):
     user_pswd_md5 = db.Column(db.String(32))  # 用户密码，MD5加密32位
     register_time = db.Column(db.String(64))  # 注册时间
     email = db.Column(db.String(32), unique=True)  # 用户邮箱，唯一
+    rcode_url = db.Column(db.String(128), unique=True) # 用户收款码路径，唯一
     attention = db.Column(db.Integer, default=0)  # 关注数
     Fan = db.Column(db.Integer, default=0)  # 粉丝数
     signature = db.Column(db.String(512), default='该用户很懒，还没有个人介绍')  # 签名
@@ -416,8 +417,9 @@ def essay_detaile(title):
         # 文章浏览次数加1
         essay.essay_scan += 1
         db.session.add(essay)
+        user = User.query.filter_by(user_name=essay.essay_push_user).first()
         db.session.commit()
-        return render_template('html/essay_detaile.html', essay=essay)
+        return render_template('html/essay_detaile.html', essay=essay, rcode_url=user.rcode_url)
     else:
         return "没有文章"
 
@@ -800,6 +802,20 @@ def upload():
             "original": upfile.filename
         }
         return json.dumps(result)
+
+# 更换收款码
+@app.route('/change_rcode', methods=['POST'])
+def change_rcode():
+    rcode_img = request.files['file']
+    rcode_img_name = rcode_img.filename
+    rcode_img.save(os.path.join('static/files/image/rcode', rcode_img_name))
+    rcode_img_src = '/static/files/image/rcode/' + rcode_img_name
+    uname = session.get('username')
+    user = User.query.filter_by(user_name=uname).first()
+    user.rcode_url = rcode_img_src
+    db.session.add(user)
+    db.session.commit()
+    return redirect('/user_center/' + uname)
 
 
 if __name__ == '__main__':

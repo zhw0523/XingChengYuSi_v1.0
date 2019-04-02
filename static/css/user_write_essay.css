@@ -3,60 +3,22 @@
     padding: 5px;
 }
 #essay_title {
-    padding-left: 6px;
-    position: absolute;
-    width: 213px;
-    border: none;
-    height: 29px;
-    z-index: 1000;
-    outline: none;
-    margin-top: -30px;
-    margin-left: 1px;
+    height: 23px;
+    max-width: 200px;
 }
 
 #select {
-    position: absolute;
-    height: 29px;
-    width: 134px;
-    border: none;
-    right: 112px;
-    z-index: 1000;
-    margin-top: -30px;
-    outline: none;
-    background-color: #fff;
+    max-width: 200px;
 }
 
 @media screen and (max-width: 768px) {
     #select {
-        position: absolute;
-        height: 29px;
-        width: 140px;
-        border: none;
-        right: 12px;
-        margin-top: -31px;
-        outline: none;
-        background-color: #fff;
-        color: #777;
-        font-size: 14px;
+        height: 23px;
+        margin-top: 1px!important;
     }
 
     #essay_title {
-        padding-left: 6px;
-        position: absolute;
-        width: 230px;
-        border: none;
-        height: 29px;
-        z-index: 999;
-        outline: none;
-        margin-top: -31px;
-        margin-left: 1px;
-    }
 
-    .edui-default .edui-dialog-content {
-        width: 376px !important;
-    }
-    .edui-default .edui-dialog{
-        margin-top: 10px;
     }
 
     /*图片上传手机样式
@@ -74,7 +36,3 @@
     top: 100px;
 }
 
-.edui-default .edui-editor-breadcrumb {
-    height: 30px;
-    margin: 0;
-}

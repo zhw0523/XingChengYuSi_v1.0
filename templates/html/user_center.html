@@ -45,7 +45,14 @@
                 <div class="info_xx">
                     <a href="/user_write_essay/{{ user_infos.user_name }}">发布博文</a>
                     <span>|</span>
-                    <a href="javascript:void(0)" class="change_gq">更改简介</a>
+                    <a href="javascript:void(0);" class="change_gq">更改简介</a>
+                    <span>|</span>
+                    <a href="javascript:void(0);" title="选择我的收款码" class="change_rcode">赞赏码</a>
+                    <form action="/change_rcode" method="post" enctype="multipart/form-data" style="display: none">
+                        <input type="file" name="file" id="rcode_file">
+                        <input type="hidden" name="username" value="{{ user_infos.user_name }}">
+                        <button type="submit" id="sub_rcode"></button>
+                    </form>
                     <span>|</span>
                     <a href="/exit_login">退出登录</a>
                 </div>
